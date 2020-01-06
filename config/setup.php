@@ -39,17 +39,4 @@ $req = $bdd->prepare($sql);
 if ($req->execute())
     echo "Users table successfully created.\n<br>";
 $req->closeCursor();
-
-
-
-// $req = $bdd->prepare('SELECT nom FROM jeux_video WHERE possesseur = :possesseur');
-// $req->execute(array('possesseur' => $_GET['possesseur']));
-// $donnees = $req->fetch();
-
-// echo '<ul>';
-// while ($donnees = $req->fetch())
-// 	echo '<li>' . $donnees['nom'];
-// echo '</ul>';
-
-// $req->closeCursor();
 ?>

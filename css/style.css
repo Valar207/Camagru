@@ -1,0 +1,58 @@
+body{
+    background-color: #FAFAFA;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+
+.center{
+    text-align: center;
+}
+
+/*index*/
+.camagru{
+    text-align: center;
+    padding: 10px;
+    font-family: billabong;
+    font-size: 60px;
+}
+.login-form{
+    width: 370px;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid #E6E6E6;
+    background-color: white;
+    padding: 10px 50px 10px 50px;
+    border-radius: 10px;
+}
+.pwd-forgot{
+    text-align: center;
+}
+
+.no-account{
+    width: 370px;
+    padding: 15px;
+    margin-top: 10px;
+    border: 1px solid #E6E6E6;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.hr {
+    padding-top: 20px;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    color: rgba(160, 155, 155, 0.87);
+}
+.hr::before,
+.hr::after {
+    border-top: .0625em solid #E6E6E6;
+    content: "";
+    flex: 1;
+    margin: 0 .9em;
+}
