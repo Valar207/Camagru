@@ -1,15 +1,39 @@
 body{
     background-color: #FAFAFA;
 }
-.red{
-    background-color: red;
-}
+
 .green{
     background-color: green;
 }
 
 .center{
     text-align: center;
+}
+input[type="text"], input[type="password"],  input[type="email"]{
+    background-color: #FAFAFA;
+}
+
+/*header*/
+.whiteheader{
+    background-color: white;
+    border-bottom: 1px solid #DBDBDB;
+}
+.camagruh{
+    font-family: billabong;
+    font-size: 40px;
+}
+.test{
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav-right{
+    color: black;
+    margin: 40px;
+    white-space: nowrap;
+}
+.nav-right:hover{
+    color: black;
+    text-decoration: none;
 }
 
 /*index*/
@@ -30,6 +54,10 @@ body{
 }
 .pwd-forgot{
     text-align: center;
+    color: black;
+}
+.pwd-forgot:hover{
+    text-decoration: none;
 }
 
 .no-account{
@@ -60,14 +88,55 @@ body{
 /*reset*/
 .create-account{
     text-align: center;
+    color: black;
+    margin-bottom: 30px;
+}
+.create-account:hover{
+    text-decoration: none;
 }
 .back-to-log{
     text-align: center;
     margin-top: 10px;
+    color: black;
+}
+.back-to-log:hover{
+    text-decoration: none;
 }
 .bottom-back{
     margin: -5px -50px -10px -50px;
     border-radius: 0 0 10px 10px;
     border: 1px solid #E6E6E6;
     background-color: #FAFAFA;
+}
+
+
+/*sign up*/
+
+h6{
+    font-size: 12px;
+    text-align: center;
+}
+
+/*profil*/
+
+.profil{
+    background-color: white;
+    border: 1px solid #E6E6E6;
+    width: 700px;
+    margin-top: 100px;
+}
+.nav-profil-left{
+    background-color: white;
+}
+.nav-profil-right{
+    background-color: white;
+    border-left: 1px solid #E6E6E6;
+}
+.form-right{
+    margin-top: 20px;
+}
+img{
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
 }

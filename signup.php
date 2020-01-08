@@ -46,14 +46,14 @@ if (isset($_GET['error']))
 
     <div class="form-group">
         <input style="margin-bottom:5px;" type="email" name="mail" placeholder="E-mail" class="form-control">
-        <input style="margin-bottom:5px;" type="text" name="username" placeholder="Username" class="form-control">
-        <input style="margin-bottom:5px;" type="password" name="pwd" placeholder="Password" minlength='8' class="form-control">
-        <input type="password" name="pwd2" placeholder="Repeat password" minlength='8' class="form-control">
+        <input style="margin-bottom:5px;" type="text" name="username" placeholder="Nom d'utilisateur" class="form-control">
+        <input style="margin-bottom:5px;" type="password" name="pwd" placeholder="Mot de passe" minlength='8' class="form-control">
+        <input type="password" name="pwd2" placeholder="Confirmer mot de passe" minlength='8' class="form-control">
     </div>
     <button class="btn btn-primary btn-block" type="submit" name="signup">Signup</button>
     </form>
     <p class="hr">OU</p>
-    Vous avez un compte ? <a href="index.php">Connectez-vous</a>
+    <h6>Vous avez un compte ? <a href="index.php">Connectez-vous</a></h6>  
 
 
 </div>

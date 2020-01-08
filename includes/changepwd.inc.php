@@ -15,7 +15,7 @@ else if($_POST['pwd1'] === $_POST['pwd2'])
     $req = $bdd->prepare($sql);
     $req->execute(array('mail' => $mail, 'pwd' => $hashedPwd));
     $req->closeCursor();
-    header("Location: ../changepwd.php?changepwd=success");
+    header("Location: ../index.php?changepwd=success");
     exit();
 }
 else

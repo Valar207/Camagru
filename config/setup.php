@@ -33,7 +33,8 @@ $sql = "CREATE TABLE users (
     emailUsers TINYTEXT NOT NULL,
     pwdUsers LONGTEXT NOT NULL,
     actif BIT NOT NULL DEFAULT 0,
-    cle VARCHAR(52)
+    cle VARCHAR(52),
+    bio text
     );";
 $req = $bdd->prepare($sql);
 if ($req->execute())

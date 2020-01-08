@@ -4,7 +4,7 @@ function    sendActivation($username, $mail, $cle)
 {
     $destinataire = $mail;
     $sujet = "Activer votre compte" ;
-    $entete = "From: camagrutest207@gmail.com \r\n" ;
+    $entete = "From: camagrutestactivation@gmail.com \r\n" ;
     $entete .= "Content-type: text/html; charset=utf8";
     $message = '<!DOCTYPE html>
     <html lang="en">
@@ -31,9 +31,8 @@ function    sendActivation($username, $mail, $cle)
 function    sendLinkNewPwd($mail, $checkcle)
 {
     $destinataire = $mail;
-    $sujet = "Mot de passe oublié" ;
-    $sujet = "=?UTF-8?B?".base64_encode($sujet)."?=";
-    $entete = "From: camagrutest207@gmail.com \r\n" ;
+    $sujet = "Changement de mot de passe" ;
+    $entete = "From: camagrutestoublimdp@gmail.com \r\n" ;
     $entete .= "Content-type: text/html; charset=utf8";
     $message = '<!DOCTYPE html>
     <html lang="en">
