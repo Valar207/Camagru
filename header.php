@@ -9,7 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Camagru</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css?version=32">
+    <link rel="stylesheet" href="css/style.css?version=36">
 </head>
 <body>
 <div class="container-fluid whiteheader">
@@ -21,18 +21,15 @@ session_start();
                 <?php
                     if (!isset($_SESSION['nameUsers']))
                     {
-                        echo '<a class="nav-right" href="./signup.php">Inscription</a>
+                        echo '<a class="nav-right" href="./inscription.php">Inscription</a>
                             <a class="nav-right" href="./index.php">Connexion</a>
                             <a class="nav-right" href="">Galerie</a>';
                     }
                     else
-                        echo '<a class="nav-right" href="./profile.php">Profil</a>
+                        echo '<a class="nav-right" href="./edit_profile.php">Profil</a>
                             <a class="nav-right" href="">Galerie</a>
                             <a class="nav-right" href="./includes/logout.inc.php?logout=ok">Déconnexion</a>';
-
                 ?>
-                            
-
             </div>
     </div>
 </div>

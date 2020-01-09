@@ -4,7 +4,7 @@
 
     if (isset($_SESSION['nameUsers']))
     {
-        header("Location: profile.php");
+        header("Location: edit_profile.php");
         exit();
     }
 ?>
@@ -63,6 +63,14 @@
                 Votre mot de passe a bien été modifié
                 </div>';
         }
+        if (isset($_GET['success']))
+        {
+            if ($_GET['success'] == 'account_deleted')
+            echo '<div class="alert alert-success" role="alert">
+            Votre compte a bien été supprimé !
+            </div>';
+        }
+
     ?>
     <div class="form-group">
         <input style="margin-bottom:5px;" type="text" name="mail" placeholder="E-mail ou nom d'utilisateur" id="username" class="form-control">
@@ -71,10 +79,10 @@
         <button class="btn btn-primary btn-block" type="submit" name="connexion">Connexion</button>
     <p class="hr">OU</p>
     </form>
-    <a class="pwd-forgot" href="./reset.php"><p class="pwd-forgot">Mot de passe oublié ?</p></a>
+    <a class="pwd-forgot" href="./forgotten_pwd.php"><p class="pwd-forgot">Mot de passe oublié ?</p></a>
 </div>
 <div class="container no-account">
-Pas de compte ? <a href="signup.php"> Inscrivez-vous</a>
+Pas de compte ? <a href="inscription.php"> Inscrivez-vous</a>
 </div>
 
 

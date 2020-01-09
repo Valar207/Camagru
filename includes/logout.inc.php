@@ -7,4 +7,5 @@ if (isset($_POST['logout']) || isset($_GET['logout']))
     header("Location: ../index.php?profile=logout");
     exit();
 }
+
 ?>

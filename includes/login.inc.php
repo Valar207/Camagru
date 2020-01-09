@@ -14,8 +14,7 @@ if (isset($_POST['connexion']))
     }
     else
     {
-        $sql = "SELECT * FROM users WHERE emailUsers= :mail OR nameUsers= :mail";
-        $req = $bdd->prepare($sql);
+        $req = $bdd->prepare("SELECT * FROM users WHERE emailUsers= :mail OR nameUsers= :mail");
         $req->execute(array('mail' => $mail));
         if ($row = $req->fetch())
         {
@@ -36,6 +35,8 @@ if (isset($_POST['connexion']))
                 session_start();
                 $_SESSION['nameUsers'] = $row['nameUsers'];
                 $_SESSION['mail'] = $row['emailUsers'];
+                $_SESSION['id'] = $row['idUsers'];
+                $_SESSION['img_p'] = $row['img'];
                 header("Location: ../index.php?login=success");
                 exit();
             }

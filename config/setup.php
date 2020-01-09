@@ -34,6 +34,7 @@ $sql = "CREATE TABLE users (
     pwdUsers LONGTEXT NOT NULL,
     actif BIT NOT NULL DEFAULT 0,
     cle VARCHAR(52),
+    img varchar(255) NOT NULL DEFAULT './profile_pics/default_profile.jpg',
     bio text
     );";
 $req = $bdd->prepare($sql);

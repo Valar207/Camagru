@@ -1,12 +1,9 @@
 <?PHP
 require "./header.php";
-
-
-
 ?>
 
 <div class="login-form">
-<form action="./includes/reset_link.inc.php" method="post">
+<form action="./includes/changepwd_link.inc.php" method="post">
 <h1 class="camagru">Camagru</h1>
 <?php
 if (isset($_GET['error']))
@@ -41,7 +38,7 @@ if (isset($_GET['mail']))
     <button class="btn btn-primary btn-block" type="submit" name="reset" class="form-control">Envoyer un lien de connexion</button>
 </form>
 <p class="hr">OU</p>
-<a class="create-account" href="signup.php"><p class="create-account">Créer un compte</p></a>
+<a class="create-account" href="inscription.php"><p class="create-account">Créer un compte</p></a>
 <div class="bottom-back">
 <a class="back-to-log" href="index.php"><p class="back-to-log">Revenir à l'écran de connexion</p></a>
 </div>
