@@ -5,6 +5,7 @@ if (!isset($_SESSION['bio']))
 {
     $_SESSION['bio'] = '';
 }
+
 ?>
 
 <div class="container edit_profil">
@@ -17,17 +18,29 @@ if (!isset($_SESSION['bio']))
             </ul>
         </div>
         <div class="col-md-8 nav-profil-right">
-            <form action="./includes/edit_profile.inc.php" method="post" class="form-right">
-                <div class="row" style="margin-bottom: 15px;">
+        <div class="row" style="margin-bottom: 15px; margin-top: 20px;">
                     <div class="col-sm-4 text-right">
                         <img src="<?php echo $_SESSION['img_p']; ?>" class="img-profil" alt="...">
                     </div>
                     <div class="col-sm-6">
                         <h1><?php echo $_SESSION['nameUsers']; ?></h1>
-                        <label for="fileToUpload">modifier la photo de profil</label>
-			            <input style="display: none" type="file" name="fileToUpload" id="fileToUpload" accept="image/*" onchange="fileName()">
+
+
+
+                        <form action="includes/upload_imgprofile.inc.php" method="post" enctype="multipart/form-data">
+                            <label for="upload" style="display:inline-block; font-size:15px">Modifier la photo de profil</label>
+                            <input id="upload" type="file" name="file" accept="image/*" style="display:none;">
+                            <button class="btn btn-primary" type="submit" name="submit" style="display:inline-block">Upload</button>  
+
+                        </form>
+
+
+
                     </div>
                 </div>
+            <form action="./includes/edit_profile.inc.php" method="post" class="form-right">
+                
+
                 <?php
 
                 if (isset($_GET['success']))
@@ -61,6 +74,15 @@ if (!isset($_SESSION['bio']))
                         Adresse mail, nom d\'utilisateur et biographie modifiée.
                         </div>';
                 }
+                if (isset($_GET['upload']))
+                {
+                    if ($_GET['upload'] == 'success')
+                        echo '<div class="col-sm-10 offset-sm-1 text-center alert alert-success" role="alert">
+                        Photo de profil enregistrée.
+                        </div>';
+                }
+
+
 
             ?>
                 <div class="form-group row" style="margin-top:20px;">
@@ -94,6 +116,8 @@ if (!isset($_SESSION['bio']))
                     </div>
                 </div>
             </form>
+
+
 
         </div>
     </div>
