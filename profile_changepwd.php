@@ -22,7 +22,7 @@ if (!isset($_SESSION['bio']))
             <form action="./includes/profile_changepwd.inc.php" method="post" class="form-right">
             <div class="row" style="margin-bottom: 15px;">
                     <div class="col-sm-4 text-right">
-                        <img src="./img/exp.jpeg" class="img-profil" alt="...">
+                        <img src="<?php echo $_SESSION['img_p']; ?>" class="img-profil" alt="...">
                     </div>
                     <div class="col-sm-6">
                         <h1><?php echo $_SESSION['nameUsers']; ?></h1>

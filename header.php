@@ -9,7 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Camagru</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css?version=38">
+    <link rel="stylesheet" href="css/style.css?version=40">
     <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>

@@ -23,32 +23,22 @@ $id = $_SESSION['id'];
 </script>
 
     <?php
-		// if(isset($_POST['camupload']))
-		// {
-        //     $base64 = $_POST['camupload'];
-		// 	list($src, $base64) = explode(';', $base64);
-		// 	list($base64, $data) = explode(',', $base64);
-        //     $data = base64_decode($data);
-        //     $source_img = imagecreatefromstring($data);
-        //     imageflip($source_img, IMG_FLIP_HORIZONTAL);
-
-        //     /*store img_nbr in SESSION*/
-        //     $req = $bdd->prepare("SELECT * FROM users WHERE idUsers= :id");
-        //     $req->execute(array('id' => $id));
-        //     if ($row = $req->fetch())
-        //         $_SESSION['img_nbr'] = $row['img_nbr'];
-        //     $req->closeCursor();
-            
-        //     /*increment img_nbr*/
-        //     $req = $bdd->prepare("UPDATE users SET img_nbr = img_nbr+1 WHERE idUsers= :id");
-        //     $req->execute(array('id' => $id));
-        //     $req->closeCursor();
-
-        //     $imageSave = imagepng($source_img, './post_img/'.$_SESSION['nameUsers'].'_'.$_SESSION['img_nbr'].'.png');
-        //     imagedestroy($source_img);
-        // }
-        // else{
-        //     echo 'no';
-        // }
+        $req = $bdd->prepare("SELECT * FROM pictures WHERE id_user= :id ORDER BY `date` DESC");
+        $req->execute(array('id' => $id));
+        
+    
+        while ($row = $req->fetch())
+        {
+            echo '<div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <img src='.$row['img'].' class="">
+                </div>
+            </div>
+        </div>';
+        }
+    
+    
+        $req->closeCursor();
 	?>
 

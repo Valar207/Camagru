@@ -155,7 +155,8 @@ h6{
 .active a{
     color: white;
 }
-img{
+
+.text-right img{
     border-radius: 50%;
     width: 75px;
     height: 75px;

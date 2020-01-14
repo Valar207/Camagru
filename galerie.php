@@ -24,8 +24,12 @@ if(isset($_SESSION['nameUsers']))
 else
 {
 	echo 'LA GALERIIIIE';
+
+
+
 }
 ?>
+
 
 
 
