@@ -22,7 +22,8 @@ if (isset($_POST['submit']))
             if ($filesize < 1000000){
                 $filenamenew = $_SESSION['id'].".".$fileactualext;
                 $filedestination = '../profile_pics/'.$filenamenew;
-                unlink('.'.$_SESSION['img_p']);
+                if ($_SESSION['img_p'] !== './profile_pics/default_profile.jpg')
+                    unlink('.'.$_SESSION['img_p']);
                 move_uploaded_file($filetmpname, $filedestination);
                 $_SESSION['img_p'] = './profile_pics/'.$filenamenew;
                 $req = $bdd->prepare("UPDATE users SET img= :img WHERE idUsers= :id");
@@ -39,7 +40,7 @@ if (isset($_POST['submit']))
         }
     }
     else{
-        echo 'not this type';
+        header("Location: ../edit_profile.php?upload=fail");
     }
 }
 

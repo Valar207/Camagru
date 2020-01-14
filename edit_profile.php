@@ -30,11 +30,8 @@ if (!isset($_SESSION['bio']))
                         <form action="includes/upload_imgprofile.inc.php" method="post" enctype="multipart/form-data">
                             <label for="upload" style="display:inline-block; font-size:15px">Modifier la photo de profil</label>
                             <input id="upload" type="file" name="file" accept="image/*" style="display:none;">
-                            <button class="btn btn-primary" type="submit" name="submit" style="display:inline-block">Upload</button>  
-
+                            <button class="btn btn-primary upload-img" type="submit" name="submit" style="display:inline-block">Valider</button>  
                         </form>
-
-
 
                     </div>
                 </div>
@@ -79,6 +76,10 @@ if (!isset($_SESSION['bio']))
                     if ($_GET['upload'] == 'success')
                         echo '<div class="col-sm-10 offset-sm-1 text-center alert alert-success" role="alert">
                         Photo de profil enregistrée.
+                        </div>';
+                    if ($_GET['upload'] == 'fail')
+                        echo '<div class="col-sm-10 offset-sm-1 text-center alert alert-danger" role="alert">
+                        Veuillez sélectionner une image.
                         </div>';
                 }
 

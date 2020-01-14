@@ -160,3 +160,18 @@ img{
     width: 75px;
     height: 75px;
 }
+.upload-img{
+    font-size: 15px;
+    padding: 1px 1px 1px 1px;
+}
+
+/*galerie*/
+
+video {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+canvas {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }

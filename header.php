@@ -9,7 +9,8 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Camagru</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css?version=36">
+    <link rel="stylesheet" href="css/style.css?version=38">
+    <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 <div class="container-fluid whiteheader">
@@ -23,11 +24,11 @@ session_start();
                     {
                         echo '<a class="nav-right" href="./inscription.php">Inscription</a>
                             <a class="nav-right" href="./index.php">Connexion</a>
-                            <a class="nav-right" href="">Galerie</a>';
+                            <a class="nav-right" href="./galerie.php">Galerie</a>';
                     }
                     else
                         echo '<a class="nav-right" href="./edit_profile.php">Profil</a>
-                            <a class="nav-right" href="">Galerie</a>
+                            <a class="nav-right" href="./galerie.php">Galerie</a>
                             <a class="nav-right" href="./includes/logout.inc.php?logout=ok">Déconnexion</a>';
                 ?>
             </div>
