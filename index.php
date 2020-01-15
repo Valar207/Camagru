@@ -4,7 +4,7 @@
 
     if (isset($_SESSION['nameUsers']))
     {
-        header("Location: edit_profile.php");
+        header("Location: galerie.php");
         exit();
     }
 ?>

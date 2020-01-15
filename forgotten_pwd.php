@@ -13,13 +13,6 @@ if (isset($_GET['error']))
         Remplissez tous les champs
         </div>';
 }
-if (isset($_GET['error']))
-{
-    if ($_GET['error'] == 'emptyfield')
-        echo '<div class="alert alert-danger" role="alert">
-        Remplissez tous les champs
-        </div>';
-}
 if (isset($_GET['mail']))
 {
     if ($_GET['mail'] == 'sent')

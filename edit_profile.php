@@ -20,15 +20,12 @@ if (!isset($_SESSION['bio']))
         <div class="col-md-8 nav-profil-right">
         <div class="row" style="margin-bottom: 15px; margin-top: 20px;">
                     <div class="col-sm-4 text-right">
-                        <img src="<?php echo $_SESSION['img_p']; ?>" class="img-profil" alt="...">
+                        <img src="<?php echo $_SESSION['img_p']; ?>" class="img-profil-edit" alt="...">
                     </div>
                     <div class="col-sm-6">
                         <h1><?php echo $_SESSION['nameUsers']; ?></h1>
-
-
-
                         <form action="includes/upload_imgprofile.inc.php" method="post" enctype="multipart/form-data">
-                            <label for="upload" style="display:inline-block; font-size:15px">Modifier la photo de profil</label>
+                            <label class="modifpdp" for="upload" style="display:inline-block; font-size:15px">Modifier la photo de profil</label>
                             <input id="upload" type="file" name="file" accept="image/*" style="display:none;">
                             <button class="btn btn-primary upload-img" type="submit" name="submit" style="display:block">Valider</button>  
                         </form>

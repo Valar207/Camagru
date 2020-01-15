@@ -9,28 +9,41 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Camagru</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css?version=40">
-    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css?version=56">
+    <script type="text/javascript" src="js/script.js?version=5"></script>
 </head>
-<body>
 <div class="container-fluid whiteheader">
-        <div class="row">
-            <div class="camagruh col-md-6">
-                Camagru
-            </div>
-            <div class="col-md-6 text-right test">
+<div class="container header">
+        <div class="row size">
+
                 <?php
                     if (!isset($_SESSION['nameUsers']))
                     {
-                        echo '<a class="nav-right" href="./inscription.php">Inscription</a>
-                            <a class="nav-right" href="./index.php">Connexion</a>
-                            <a class="nav-right" href="./galerie.php">Galerie</a>';
-                    }
-                    else
-                        echo '<a class="nav-right" href="./edit_profile.php">Profil</a>
-                            <a class="nav-right" href="./galerie.php">Galerie</a>
-                            <a class="nav-right" href="./includes/logout.inc.php?logout=ok">Déconnexion</a>';
-                ?>
-            </div>
+                        ?>
+                            <div class="camagruh col-md-8">
+                                <a class="nav-left" href="./galerie.php">Camagru</a>
+                            </div>
+                            <div class="col-md-4 text-right margin">
+                                <a class="nav-right" href="./index.php"><img src="icones/profil.svg" class="profil-ico"></a>
+                                <a class="nav-right" href="./galerie.php"><img src="icones/galerie.svg" class="galerie-ico"></a>
+                            </div>
+                   <?php }
+                    else 
+                    { ?>
+                        
+                        <div class="camagruh col-md-4">
+                        <a class="nav-left" href="./galerie.php">Camagru</a>
+                        </div>         
+                        <div class="col-md-4 margin photo text-center">
+                            <a href="camera.php"><img src="icones/photo.png" alt="" class="photo-ico"></a>
+                        </div>
+                        <div class="col-md-4 text-right margin">
+                            <a class="nav-right" href="./profile.php"><img src="icones/profil.svg" class="profil-ico"></a>
+                            <a class="nav-right" href="./galerie.php"><img src="icones/galerie.svg" class="galerie-ico"></a>
+                            <a class="nav-right" href="./includes/logout.inc.php?logout=ok"><img src="icones/logout.svg" class="logout-ico"></a>
+                            </div>
+                    <?php } ?>
+                
     </div>
+</div>
 </div>
