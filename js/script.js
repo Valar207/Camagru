@@ -16,23 +16,28 @@ function capture(){
 	document.getElementById('tar').value=base64;
 }
 
-//get modal elem
-var modal = document.getElementById('simplemodal');
-//get open modal button
-var modalbtn = document.getElementById('modalbtn');
-//get close btn
-var closebtn = document.getElementsByClassName('closebtn')[0];
-//listen open click
-modalbtn.addEventListener('click', openmodal);
-//listen close click
-closebtn.addEventListener('click', closemodal);
+// var modal = document.getElementById('simplemodal');
+// //get open modal button
+// var modalbtn = document.getElementById('pics-post');
 
-//function open modal
-function openmodal(){
-	modal.style.display = 'block';
-}
+// //get close btn
+// var closebtn = document.getElementsByClassName('closebtn')[0];
 
-//function close modal
-function closemodal(){
-	modal.style.display = 'none';
-}
+// //listen open click
+// modalbtn.addEventListener('click', openmodal);
+// //listen close click
+// closebtn.addEventListener('click', closemodal);
+// //listen outside click
+// window.addEventListener('click', clickoutside)
+
+// //function open modal
+// function openmodal(){
+// 	modal.style.display = 'block';
+// }
+// function closemodal(){
+// 	modal.style.display = 'none';
+// }
+// function clickoutside(e){
+// 	if(e.target == modal)
+// 	modal.style.display = 'none';
+// }

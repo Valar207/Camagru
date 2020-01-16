@@ -9,8 +9,8 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Camagru</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css?version=56">
-    <script type="text/javascript" src="js/script.js?version=5"></script>
+    <link rel="stylesheet" href="css/style.css?version=58">
+    <script type="text/javascript" src="js/script.js?version=11"></script>
 </head>
 <div class="container-fluid whiteheader">
 <div class="container header">

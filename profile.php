@@ -60,7 +60,7 @@ if ($row = $req->fetch())
         
         while ($row = $req->fetch())
         {
-            echo '<img width=30% src='.$row['img'].' class="pics-profile">';
+            echo '<img width=30% src='.$row['img'].' class="pics-post">';
         }
         $req->closeCursor();
 	?>

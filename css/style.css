@@ -217,7 +217,7 @@ video {
 }
 
 .modall{
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -260,7 +260,7 @@ video {
     width: 150px;
 
 }
-.pics-profile{
+.pics-post{
     margin: 1%;
 }
 .modifp{
