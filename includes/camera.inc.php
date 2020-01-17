@@ -29,6 +29,15 @@ if(isset($_POST['camupload']))
     $req = $bdd->prepare("INSERT INTO pictures (id_user, img) VALUES (:id, :img)");
     $req->execute(array('id' => $id, 'img' => $path_img));
     $req->closeCursor();
+    
+    /* get img id */
+    $req = $bdd->prepare("SELECT id_img FROM pictures WHERE img = :img");
+    $req->execute(array('img' => $path_img));
+    if ($row = $req->fetch()){
+        $_SESSION['id_img'] = $row['id_img'];
+    }
+    $req->closeCursor();
+
     /*save img dans post_img*/
     $imageSave = imagepng($source_img, '../post_img/'.$_SESSION['nameUsers'].'_'.$_SESSION['img_nbr'].'.png');
 

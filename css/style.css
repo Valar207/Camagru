@@ -13,7 +13,7 @@ input[type="text"], input[type="password"],  input[type="email"]{
     background-color: #FAFAFA;
 }
 
-.container{
+.container .header{
     max-width: 935px;
 }
 
@@ -210,13 +210,15 @@ video {
 
 .galerie{
     margin-top: 50px;
+    max-width: 935px;
+    padding: 0;
 }
 .galerietxt{
     font-family: billabong;
     font-size: 50px;
 }
 
-.modall{
+.modal{
     display: none;
     position: fixed;
     z-index: 1;
@@ -229,9 +231,9 @@ video {
 }
 .modal-contentt{
     background-color: #f4f4f4;
-    margin: 30% auto;
-    padding: 20px;
-    width: 70%;
+    margin: 230px auto;
+    padding: 0px;
+    width: 935px;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
 
 }
@@ -245,7 +247,12 @@ video {
     text-decoration: none;
     cursor: pointer;
 }
-  
+.page-item.active .page-link {
+    z-index: 0;
+}
+.imginmodal{
+    margin: 0;
+}
   
 
 /*profil*/
@@ -260,11 +267,14 @@ video {
     width: 150px;
 
 }
-.pics-post{
+.modalimg{
     margin: 1%;
 }
 .modifp{
     margin: auto;
+}
+.delpicbtn{
+    margin: 10px;
 }
 
 

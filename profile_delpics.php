@@ -1,5 +1,6 @@
 <?php
 require "header.php";
+require "./config/database_connect.php";
 
 ?>
 
@@ -24,14 +25,6 @@ require "header.php";
                     </div>
                 </div>
             <form action="./includes/edit_profile.inc.php" method="post" class="form-right">
-                
-
-                <?php
-
-               
-
-
-                ?>
                 <div class="form-group row" style="margin-top:20px;">
                     <div class="col-sm-4 text-right">
                         <label class="col-form-label">Email</label>

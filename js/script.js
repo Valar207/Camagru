@@ -16,28 +16,25 @@ function capture(){
 	document.getElementById('tar').value=base64;
 }
 
-// var modal = document.getElementById('simplemodal');
-// //get open modal button
-// var modalbtn = document.getElementById('pics-post');
-
-// //get close btn
-// var closebtn = document.getElementsByClassName('closebtn')[0];
-
-// //listen open click
-// modalbtn.addEventListener('click', openmodal);
-// //listen close click
-// closebtn.addEventListener('click', closemodal);
-// //listen outside click
-// window.addEventListener('click', clickoutside)
-
-// //function open modal
-// function openmodal(){
-// 	modal.style.display = 'block';
-// }
-// function closemodal(){
-// 	modal.style.display = 'none';
-// }
-// function clickoutside(e){
-// 	if(e.target == modal)
-// 	modal.style.display = 'none';
-// }
+var modal = document.getElementById('mymodal');
+var modalImg = document.getElementById("imgmodal");
+var closebtn = modal.querySelector(".closebtn");
+var images = document.querySelectorAll(".modalimg");
+closebtn.addEventListener('click', closemodal);
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+    for (i = 0; i < images.length; i++) 
+        images[i].addEventListener("click", openmodal);
+    function openmodal()
+    {
+        modal.style.display = 'block';
+        modalImg.src = this.src;
+        modalImg.value = this.value;
+    }
+    function closemodal()
+    {
+        modal.style.display = 'none';
+    }

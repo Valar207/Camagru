@@ -29,6 +29,8 @@ $depart = ($pagecourante - 1) * $imgParPage;
 
 
 <!-- display gallerie -->
+
+
 <div class="container galerie">
 
 <h1 class="text-center galerietxt">Galerie</h1>
@@ -37,24 +39,29 @@ $depart = ($pagecourante - 1) * $imgParPage;
 <?php
 	$req = $bdd->prepare("SELECT * FROM pictures ORDER BY id_img DESC LIMIT ".$depart.",".$imgParPage);
 	$req->execute();
-	$i = 0;
 	while ($row = $req->fetch())
 		{
 			?>
 			<!-- display modals -->
-			<div id="simplemodal<?php echo $i ?>" class="modall">
+
+				<img width=31% src="<?php echo $row['img'] ?>" alt="<?php echo $row['id_img'] ?>" id="modalimg" class="modalimg">
+		<?php
+		}?>
+
+		<div id="mymodal" class="modal">
 			<div class="modal-contentt">
+				<img src="" alt="" id="imgmodal" class="imginmodal">
 				<span class="closebtn">&times;</span>
-				<p>Hello modal <?php echo $i ?></p>
+				<form action="includes/add_comment.inc.php" method="post" class="col-sm-5" style="display:inline-block">
+						<div class="col">
+							<textarea class="form-control" name="com" placeholder="Ajouter un commentaire..." rows="3"></textarea>
+							<button class="btn btn-primary btn-block" type="submit" name="save">Publier</button>
+							<input type="hidden" value="" id="valimg" name="valimg">
+						</div>
+				</form>
 			</div>
 		</div>
-				<img width=30% src="<?php echo $row['img'] ?>" id="pics-post<?php echo $i ?>" class="pics-post">
-		<?php
-			$i += 1;
-		}
-	$req->closeCursor();
 
-?>
 
 
 
@@ -85,175 +92,37 @@ $depart = ($pagecourante - 1) * $imgParPage;
 </div>
 </div>
 
-<!-- <script src="js/script.js"> -->
+<!-- <script src="js/script.js?version=55"> -->
 <script>
+var modal = document.getElementById('mymodal');
+var modalImg = document.getElementById("imgmodal");
+var closebtn = modal.querySelector(".closebtn");
+var images = document.querySelectorAll(".modalimg");
+var idc = document.getElementById('idc');
+var valimg = document.getElementById('valimg');
 
-
-
-
-// var modal = [];
-// var modalbtn = [];
-// var closebtn = [];
-// for (i=0; i<9; i++) {
-
-//     modal[i] = document.getElementById('simplemodal'+i);
-
-//     modalbtn[i] = document.getElementById('pics-post'+i);
-//     modalbtn[i].addEventListener('click', () => {
-//         modal[i].style.display = 'block';
-//     });
-//     window.addEventListener('click', eval('clickoutside'+i));
-
-//     closebtn[i] = document.getElementsByClassName('closebtn')[i];
-//     closebtn[i].addEventListener('click', () => {
-//         modal[i].style.display = 'none';
-//     });
-// }
-
-
-
-
-
-
-
-
-
-var modal = [];
-for (i=0; i<9; i++)
-{
-	modal[i] = document.getElementById('simplemodal'+i);
+closebtn.addEventListener('click', closemodal);
+window.onclick = function(event) {
+    if (event.target == modal)
+        modal.style.display = "none";
 }
-
-var modalbtn = [];
-for (i=0; i<9; i++) {
-	modalbtn[i] = document.getElementById('pics-post'+i);
-	modalbtn[i].addEventListener('click', eval('openmodal'+i));
-	window.addEventListener('click', eval('clickoutside'+i));
-}
-
-for (i=0; i<9; i++) {
-	modalbtn[i] = document.getElementById('pics-post'+i);
-	modalbtn[i].addEventListener('click', eval('openmodal'+i));
-	window.addEventListener('click', eval('clickoutside'+i));
-}
-
-
-var closebtn0 = document.getElementsByClassName('closebtn')[0];
-var closebtn1 = document.getElementsByClassName('closebtn')[1];
-var closebtn2 = document.getElementsByClassName('closebtn')[2];
-var closebtn3 = document.getElementsByClassName('closebtn')[3];
-var closebtn4 = document.getElementsByClassName('closebtn')[4];
-var closebtn5 = document.getElementsByClassName('closebtn')[5];
-var closebtn6 = document.getElementsByClassName('closebtn')[6];
-var closebtn7 = document.getElementsByClassName('closebtn')[7];
-var closebtn8 = document.getElementsByClassName('closebtn')[8];
-
-
-for (i=0; i<9; i++) {
-	eval('closebtn'+i.addEventListener('click', eval('closemodal'+i)));
-}
-
-
-
-function openmodal0(){
-	modal[0].style.display = 'block';
-}
-function openmodal1(){
-	modal[1].style.display = 'block';
-}
-function openmodal2(){
-	modal[2].style.display = 'block';
-}
-function openmodal3(){
-	modal[3].style.display = 'block';
-}
-function openmodal4(){
-	modal[4].style.display = 'block';
-}
-function openmodal5(){
-	modal[5].style.display = 'block';
-}
-function openmodal6(){
-	modal[6].style.display = 'block';
-}
-function openmodal7(){
-	modal[7].style.display = 'block';
-}
-function openmodal8(){
-	modal[8].style.display = 'block';
-}
-
-
-
-
-function closemodal0(){
-	modal[0].style.display = 'none';
-}
-function closemodal1(){
-	modal[1].style.display = 'none';
-}
-function closemodal2(){
-	modal[2].style.display = 'none';
-}
-function closemodal3(){
-	modal[3].style.display = 'none';
-}
-function closemodal4(){
-	modal[4].style.display = 'none';
-}
-function closemodal5(){
-	modal[5].style.display = 'none';
-}
-function closemodal6(){
-	modal[6].style.display = 'none';
-}
-function closemodal7(){
-	modal[7].style.display = 'none';
-}
-function closemodal8(){
-	modal[8].style.display = 'none';
-}
-
-
-
-function clickoutside0(e){
-	if(e.target == modal[0])
-		modal[0].style.display = 'none';
-}
-function clickoutside1(e){
-	if(e.target == modal[1])
-		modal[1].style.display = 'none';
-}
-function clickoutside2(e){
-	if(e.target == modal[2])
-		modal[2].style.display = 'none';
-}
-function clickoutside3(e){
-	if(e.target == modal[3])
-		modal[3].style.display = 'none';
-}
-function clickoutside4(e){
-	if(e.target == modal[4])
-		modal[4].style.display = 'none';
-}
-function clickoutside5(e){
-	if(e.target == modal[5])
-		modal[5].style.display = 'none';
-}
-function clickoutside6(e){
-	if(e.target == modal[6])
-		modal[6].style.display = 'none';
-}
-function clickoutside7(e){
-	if(e.target == modal[7])
-		modal[7].style.display = 'none';
-}
-function clickoutside8(e){
-	if(e.target == modal[8])
-		modal[8].style.display = 'none';
-}
-
+    for (i = 0; i < images.length; i++) 
+        images[i].addEventListener("click", openmodal);
+    function openmodal()
+    {
+        modal.style.display = 'block';
+        modalImg.src = this.src;
+        modalImg.alt = this.alt;
+		valimg.value = this.alt;
+    }
+    function closemodal()
+    {
+        modal.style.display = 'none';
+    }
 </script>
+
+
+
 
 
 

@@ -13,19 +13,17 @@ if (isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] <= $pagestot)
 	$_GET['page'] = intval($_GET['page']);
 	$pagecourante = $_GET['page'];
 }
-else{
+else
 	$pagecourante = 1;
-}
 $depart = ($pagecourante - 1) * $imgParPage;
 
 $req = $bdd->prepare("SELECT img_nbr FROM users WHERE idUsers = :id");
 $req->execute(array('id' => $id));
 if ($row = $req->fetch())
-{
     $img_nbr = $row['img_nbr'];
-}
-?>
 
+
+?>
 <div class="container profil">
    
 
@@ -48,22 +46,48 @@ if ($row = $req->fetch())
             </tr>
         </tbody>
         </table>
+        <hr>
+        <?php
 
- 
-    <hr>
+        if (isset($_GET['picture'])){
+            if ($_GET['picture'] == 'deleted'){
+                echo '<div class="col-sm-8 offset-sm-2 text-center alert alert-success" role="alert">
+                    Photo supprimée.
+                    </div>';
+            }
+        }
 
-
+        ?>
+            
+    <form action="includes/profile_delpics.inc.php" method="post">
+    <div class="form-row">
 
     <?php
         $req = $bdd->prepare("SELECT * FROM pictures WHERE id_user= :id ORDER BY `date` DESC LIMIT ".$depart.",".$imgParPage);
         $req->execute(array('id' => $id));
-        
         while ($row = $req->fetch())
         {
-            echo '<img width=30% src='.$row['img'].' class="pics-post">';
-        }
+            ?>
+        
+        
+
+            <div class="col-4 text-center">
+                <img width=95% src='<?php echo $row['img'] ?>' class="modalimg">
+                <br>
+                <input type="hidden" name="pagecourante" value='<?php echo $pagecourante ?>'>
+                <input type="hidden" name="id_img" value="<?php echo $row['id_img'] ?>">
+                <button type="submit" class="btn btn-danger delpicbtn" name="delimg" value="<?php echo $row['img'] ?>">Supprimer</button>
+            </div>
+
+ 
+
+
+        <?php }
         $req->closeCursor();
-	?>
+    ?>
+    </div>
+    </form>
+
 
 
 <nav aria-label="Page navigation" class="center">
@@ -86,7 +110,5 @@ if ($row = $req->fetch())
 	?>
   </ul>
 </nav>
-
-
 
 </div>
