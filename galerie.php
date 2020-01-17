@@ -41,6 +41,7 @@ $depart = ($pagecourante - 1) * $imgParPage;
 	while ($row = $req->fetch())
 		{
 			?>
+			<!-- display modals -->
 			<div id="simplemodal<?php echo $i ?>" class="modall">
 			<div class="modal-contentt">
 				<span class="closebtn">&times;</span>
