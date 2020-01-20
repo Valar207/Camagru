@@ -34,9 +34,6 @@ require "./config/database_connect.php";
                     </div>
                 </div>
 
-                <input class="del_img" type="image" src="public/picture/val/pictures/val(11).png" alt="60" value="0" style="border-color: rgba(255, 255, 255, 0);">
-
-
                 <div class="form-group row">
                     <div class="col-sm-4 text-right"></div>
                     <div class="col-sm-6">

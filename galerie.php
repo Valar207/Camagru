@@ -19,22 +19,12 @@ else{
 $depart = ($pagecourante - 1) * $imgParPage;
 ?>
 
-
-<!-- modal example -->
-<!-- <button id="modalbtn" class="button">Modal</button> -->
-
-
-
-
-
-
 <!-- display gallerie -->
-
-
-<div class="container galerie">
-
 <h1 class="text-center galerietxt">Galerie</h1>
 <hr>
+<div class="container galerie">
+
+
 
 <?php
 	$req = $bdd->prepare("SELECT * FROM pictures ORDER BY id_img DESC LIMIT ".$depart.",".$imgParPage);
@@ -54,6 +44,31 @@ $depart = ($pagecourante - 1) * $imgParPage;
 				<span class="closebtn">&times;</span>
 				<form action="includes/add_comment.inc.php" method="post" class="col-sm-5" style="display:inline-block">
 						<div class="col">
+
+
+						<script>
+							
+						</script>
+
+							<?php
+
+							$id_img = 12;
+
+							$req = $bdd->prepare("SELECT comment FROM comments WHERE id_img = :id_img");
+							$req->execute(array('id_img' => $id_img));
+
+							while ($com = $req->fetch()){
+								print_r($com);
+							}
+
+
+							$req->closeCursor();
+
+
+							?>
+
+
+
 							<textarea class="form-control" name="com" placeholder="Ajouter un commentaire..." rows="3"></textarea>
 							<button class="btn btn-primary btn-block" type="submit" name="save">Publier</button>
 							<input type="hidden" value="" id="valimg" name="valimg">
@@ -92,33 +107,10 @@ $depart = ($pagecourante - 1) * $imgParPage;
 </div>
 </div>
 
-<!-- <script src="js/script.js?version=55"> -->
-<script>
-var modal = document.getElementById('mymodal');
-var modalImg = document.getElementById("imgmodal");
-var closebtn = modal.querySelector(".closebtn");
-var images = document.querySelectorAll(".modalimg");
-var idc = document.getElementById('idc');
-var valimg = document.getElementById('valimg');
+<script src="js/script.js?version=55">
 
-closebtn.addEventListener('click', closemodal);
-window.onclick = function(event) {
-    if (event.target == modal)
-        modal.style.display = "none";
-}
-    for (i = 0; i < images.length; i++) 
-        images[i].addEventListener("click", openmodal);
-    function openmodal()
-    {
-        modal.style.display = 'block';
-        modalImg.src = this.src;
-        modalImg.alt = this.alt;
-		valimg.value = this.alt;
-    }
-    function closemodal()
-    {
-        modal.style.display = 'none';
-    }
+
+
 </script>
 
 

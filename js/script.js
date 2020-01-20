@@ -20,11 +20,13 @@ var modal = document.getElementById('mymodal');
 var modalImg = document.getElementById("imgmodal");
 var closebtn = modal.querySelector(".closebtn");
 var images = document.querySelectorAll(".modalimg");
+var idc = document.getElementById('idc');
+var valimg = document.getElementById('valimg');
+
 closebtn.addEventListener('click', closemodal);
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == modal)
         modal.style.display = "none";
-    }
 }
     for (i = 0; i < images.length; i++) 
         images[i].addEventListener("click", openmodal);
@@ -32,9 +34,13 @@ window.onclick = function(event) {
     {
         modal.style.display = 'block';
         modalImg.src = this.src;
-        modalImg.value = this.value;
+        modalImg.alt = this.alt;
+        valimg.value = this.alt;
+        var id_img = document.getElementById('imgmodal').alt;
+        console.log(id_img);
     }
     function closemodal()
     {
         modal.style.display = 'none';
     }
+
