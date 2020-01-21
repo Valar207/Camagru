@@ -20,10 +20,10 @@ $depart = ($pagecourante - 1) * $imgParPage;
 ?>
 
 <!-- display gallerie -->
+
+<div class="container galerie">
 <h1 class="text-center galerietxt">Galerie</h1>
 <hr>
-<div class="container galerie">
-
 
 
 <?php
@@ -32,42 +32,20 @@ $depart = ($pagecourante - 1) * $imgParPage;
 	while ($row = $req->fetch())
 		{
 			?>
-			<!-- display modals -->
-
-				<img width=31% src="<?php echo $row['img'] ?>" alt="<?php echo $row['id_img'] ?>" id="modalimg" class="modalimg">
+				<a href="photo.php?id_img=<?php echo $row['id_img'] ?>&page=<?php echo $pagecourante ?>">
+				<img width=31% src="<?php echo $row['img'] ?>" alt="<?php echo $row['id_img'] ?>" id="modalimg" name="id_img" class="modalimg">				
+				</a>
 		<?php
 		}?>
 
-		<div id="mymodal" class="modal">
+		<!-- display modals -->
+		<!-- <div id="mymodal" class="modal">
 			<div class="modal-contentt">
 				<img src="" alt="" id="imgmodal" class="imginmodal">
 				<span class="closebtn">&times;</span>
 				<form action="includes/add_comment.inc.php" method="post" class="col-sm-5" style="display:inline-block">
 						<div class="col">
-
-
-						<script>
-							
-						</script>
-
-							<?php
-
-							$id_img = 12;
-
-							$req = $bdd->prepare("SELECT comment FROM comments WHERE id_img = :id_img");
-							$req->execute(array('id_img' => $id_img));
-
-							while ($com = $req->fetch()){
-								print_r($com);
-							}
-
-
-							$req->closeCursor();
-
-
-							?>
-
-
+						<input type="hidden" value="" id="id_img" name="id_img">
 
 							<textarea class="form-control" name="com" placeholder="Ajouter un commentaire..." rows="3"></textarea>
 							<button class="btn btn-primary btn-block" type="submit" name="save">Publier</button>
@@ -75,7 +53,7 @@ $depart = ($pagecourante - 1) * $imgParPage;
 						</div>
 				</form>
 			</div>
-		</div>
+		</div> -->
 
 
 

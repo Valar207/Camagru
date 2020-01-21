@@ -237,12 +237,12 @@ video {
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
 
 }
-.closebtn{
+.close{
     color: #ccc;
-    float: right;
+    margin-right: 5px;
     font-size: 30px;
 }
-.closebtn:hover, .closebtn:focus{
+.close:hover, .close:focus{
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -265,6 +265,7 @@ video {
 .img-profil{
     border-radius: 50%;
     width: 150px;
+    height: 150px;
 
 }
 .modalimg{
@@ -278,7 +279,54 @@ video {
 }
 
 
+/*photo*/
 
+.comments{
+    height: 400px;
 
+    overflow: overlay;
+    margin-top: 20px;
 
+}
+.comments::-webkit-scrollbar {
+    display: none;
+}
 
+.fakemod{
+    background-color: white;
+    margin-top: 56px;
+    padding: 0px;
+}
+
+.behind{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.profile_p_com{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.form_com{
+    width: 60%;
+    display: inline;
+    border: none;
+    padding-left: 0px;
+    margin: 0px 0px 0px 0px;
+
+}
+.form_com:focus {
+    box-shadow: none;
+}
+.pub-com{
+    color: #3797F0;
+    font-weight: 600;;
+}
+.pub-com:hover{
+    color: #3797F0;
+    font-weight: 600;;
+}
+.img_modal{
+    padding-left: 0px;
+}

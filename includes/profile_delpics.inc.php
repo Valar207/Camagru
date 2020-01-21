@@ -4,6 +4,7 @@ require "../config/database_connect.php";
 
 $delimg = $_POST['delimg'];
 $pagecourante = $_POST['pagecourante'];
+$id_user = $_SESSION['id'];
 
 
 $req = $bdd->prepare("SELECT id_img FROM pictures WHERE img = :delimg");
@@ -24,8 +25,8 @@ if (isset($_POST['delimg'])){
         {
             unlink('.'.$delimg);
             $req->closeCursor();
-            $req = $bdd->prepare("UPDATE users SET img_nbr = img_nbr - 1");
-            if ($req->execute())
+            $req = $bdd->prepare("UPDATE users SET img_nbr = img_nbr - 1 WHERE idUsers=:id_user");
+            if ($req->execute(array('id_user' => $id_user)))
                 header("Location: ../profile.php?picture=deleted&page=$pagecourante");
             else
                 echo 'error';

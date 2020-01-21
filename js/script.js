@@ -22,6 +22,8 @@ var closebtn = modal.querySelector(".closebtn");
 var images = document.querySelectorAll(".modalimg");
 var idc = document.getElementById('idc');
 var valimg = document.getElementById('valimg');
+var id_img = document.getElementById('id_img');
+
 
 closebtn.addEventListener('click', closemodal);
 window.onclick = function(event) {
@@ -36,8 +38,7 @@ window.onclick = function(event) {
         modalImg.src = this.src;
         modalImg.alt = this.alt;
         valimg.value = this.alt;
-        var id_img = document.getElementById('imgmodal').alt;
-        console.log(id_img);
+        id_img.value = this.alt;
     }
     function closemodal()
     {

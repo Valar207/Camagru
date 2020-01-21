@@ -10,7 +10,6 @@ require "header.php";
                 <li class="list-group-item item"><a href="edit_profile.php">Modifier le profil</a></li>
                 <li class="list-group-item item"><a href="profile_changepwd.php">Changer de mot de passe</a></li>
                 <li class="list-group-item item active"><a href="profile_delaccount.php">Supprimer le compte</a></li>
-                <li class="list-group-item item"><a href="profile_delpics.php">Gérer les photos</a></li>
             </ul>
         </div>
         <div class="col-md-8 nav-profil-right">
