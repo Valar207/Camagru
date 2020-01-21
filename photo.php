@@ -52,7 +52,9 @@ $page =$_GET['page'];
                             <?php } ?>
                 </div>
                 <div class="like">
-                    <button type="submit">like</button>
+                    <a href="">
+                    <img style="width:20px;" src="icones/nolike.svg" alt="">
+                    </a>
                 </div>
 
                 <hr style="margin-left:-30px">
