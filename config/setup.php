@@ -68,4 +68,18 @@ $req = $bdd->prepare($sql);
 if ($req->execute())
     echo "Comments table successfully created.\n<br>";
 $req->closeCursor();
+
+$sql = "CREATE TABLE `likes` (
+    `id_like` int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    `id_user` int(11) NOT NULL,
+    `id_img` int(11) NOT NULL,
+    FOREIGN KEY id_user(id_user)
+    REFERENCES users(idUsers),
+    FOREIGN KEY id_img(id_img)
+    REFERENCES pictures(id_img)
+  );";
+$req = $bdd->prepare($sql);
+if ($req->execute())
+    echo "Likes table successfully created.\n<br>";
+$req->closeCursor();
 ?>

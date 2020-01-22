@@ -41,7 +41,7 @@ if ($row = $req->fetch())
             </td>
             </tr>
             <tr>
-            <td><?php echo $img_nbr ?> Publications</td>
+            <td><?php echo $img_nbr; ?> Publications</td>
             <td></td>
             </tr>
         </tbody>
@@ -68,9 +68,6 @@ if ($row = $req->fetch())
         while ($row = $req->fetch())
         {
             ?>
-        
-        
-
             <div class="col-4 text-center">
                 <img width=95% src='<?php echo $row['img'] ?>' class="modalimg">
                 <br>
@@ -78,12 +75,7 @@ if ($row = $req->fetch())
                 <input type="hidden" name="id_img" value="<?php echo $row['id_img'] ?>">
                 <button type="submit" class="btn btn-danger delpicbtn" name="delimg" value="<?php echo $row['img'] ?>">Supprimer</button>
             </div>
-
- 
-
-
         <?php }
-        $req->closeCursor();
     ?>
     </div>
     </form>

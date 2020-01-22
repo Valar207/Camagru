@@ -18,13 +18,14 @@ if (isset($_POST['delimg'])){
     $req = $bdd->prepare("DELETE comments FROM comments INNER JOIN pictures ON pictures.id_img = comments.id_img
     WHERE comments.id_img = :id_img");
     if ($req->execute(array('id_img' => $id_img))){
-        $req->closeCursor();  
+
+        $req = $bdd->prepare("DELETE `likes` FROM `likes` INNER JOIN pictures ON pictures.id_img = likes.id_img WHERE likes.id_img = :id_img");
+        $req->execute(array('id_img' => $id_img));
 
         $req = $bdd->prepare("DELETE FROM pictures WHERE img= :delimg");
         if ($req->execute(array('delimg' => $delimg)))
         {
             unlink('.'.$delimg);
-            $req->closeCursor();
             $req = $bdd->prepare("UPDATE users SET img_nbr = img_nbr - 1 WHERE idUsers=:id_user");
             if ($req->execute(array('id_user' => $id_user)))
                 header("Location: ../profile.php?picture=deleted&page=$pagecourante");

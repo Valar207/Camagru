@@ -316,7 +316,7 @@ video {
     margin: 0px 0px 0px 0px;
 
 }
-.form_com:focus {
+.form_com:focus{
     box-shadow: none;
 }
 .pub-com{
@@ -330,3 +330,10 @@ video {
 .img_modal{
     padding-left: 0px;
 }
+
+.like_on{
+    background: url(icones/like.svg);
+    border:none;
+    box-shadow: none;
+}
+

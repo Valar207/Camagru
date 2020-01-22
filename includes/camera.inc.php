@@ -17,29 +17,30 @@ if(isset($_POST['camupload']))
     $req->execute(array('id' => $id));
     if ($row = $req->fetch())
         $_SESSION['img_nbr'] = $row['img_nbr'];
-    $req->closeCursor();
     
     /*increment img_nbr*/
     $req = $bdd->prepare("UPDATE users SET img_nbr = img_nbr+1 WHERE idUsers= :id");
     $req->execute(array('id' => $id));
-    $req->closeCursor();
 
-    $path_img = './post_img/'.$_SESSION['nameUsers'].'_'.$_SESSION['img_nbr'].'.png';
+    $path_img = '';
     /*insert image dans bdd*/
     $req = $bdd->prepare("INSERT INTO pictures (id_user, img) VALUES (:id, :img)");
     $req->execute(array('id' => $id, 'img' => $path_img));
-    $req->closeCursor();
     
     /* get img id */
     $req = $bdd->prepare("SELECT id_img FROM pictures WHERE img = :img");
     $req->execute(array('img' => $path_img));
     if ($row = $req->fetch()){
-        $_SESSION['id_img'] = $row['id_img'];
+        $id_img = $row['id_img'];
     }
-    $req->closeCursor();
+
+    $path_img = './post_img/'.$_SESSION['nameUsers'].'_'.$id_img.'.png';
+
+    $req = $bdd->prepare("UPDATE pictures SET img = :img WHERE id_img = :id_img");
+    $req->execute(array('img' => $path_img, 'id_img' => $id_img));
 
     /*save img dans post_img*/
-    $imageSave = imagepng($source_img, '../post_img/'.$_SESSION['nameUsers'].'_'.$_SESSION['img_nbr'].'.png');
+    $imageSave = imagepng($source_img, '../post_img/'.$_SESSION['nameUsers'].'_'.$id_img.'.png');
 
     imagedestroy($source_img);
     header("Location: ../camera.php");
