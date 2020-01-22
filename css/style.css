@@ -37,7 +37,7 @@ input[type="text"], input[type="password"],  input[type="email"]{
 }
 .nav-right{
     color: black;
-    margin: 20px;
+    margin: 15px;
     white-space: nowrap;
 }
 .nav-right:hover{
@@ -58,10 +58,12 @@ input[type="text"], input[type="password"],  input[type="email"]{
 .photo-ico{
     width: 70px;
 }
-.logout-ico, .galerie-ico, .profil-ico{
-    width: 30px;
+.logout-ico, .galerie-ico, .profil-ico, .notif-ico{
+    width: 25px;
 }
-
+.notif{
+    position: absolute;
+}
 
 
 /*index*/

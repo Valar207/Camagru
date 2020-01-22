@@ -40,7 +40,18 @@ session_start();
                         <div class="col-md-4 text-right margin">
                             <a class="nav-right" href="./profile.php"><img src="icones/profil.svg" class="profil-ico"></a>
                             <a class="nav-right" href="./galerie.php"><img src="icones/galerie.svg" class="galerie-ico"></a>
+                            <a class="nav-right" href="#"><img src="icones/notification.svg" class="notif-ico">
+                            <ul class="notif">
+                                
+                            <?php
+                                
+                            ?>
+                                <li>1</li>
+                                
+                            </ul>
                             <a class="nav-right" href="./includes/logout.inc.php?logout=ok"><img src="icones/logout.svg" class="logout-ico"></a>
+                                
+                            </a>
                             </div>
                     <?php } ?>
                 

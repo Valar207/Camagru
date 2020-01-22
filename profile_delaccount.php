@@ -9,6 +9,7 @@ require "header.php";
             <ul class="list-group list">
                 <li class="list-group-item item"><a href="edit_profile.php">Modifier le profil</a></li>
                 <li class="list-group-item item"><a href="profile_changepwd.php">Changer de mot de passe</a></li>
+                <li class="list-group-item item"><a href="notification.php">Notifications</a></li>
                 <li class="list-group-item item active"><a href="profile_delaccount.php">Supprimer le compte</a></li>
             </ul>
         </div>

@@ -31,7 +31,9 @@ $sql = "CREATE TABLE users (
     cle VARCHAR(52),
     img varchar(255) NOT NULL DEFAULT './profile_pics/default_profile.jpg',
     bio text,
-    img_nbr int (11) NOT NULL DEFAULT 0
+    img_nbr int (11) NOT NULL DEFAULT 0,
+    notif_com BIT NOT NULL DEFAULT 1,
+    notif_like BIT NOT NULL DEFAULT 1
     );";
 $req = $bdd->prepare($sql);
 if ($req->execute())
