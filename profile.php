@@ -25,7 +25,6 @@ if ($row = $req->fetch())
 
 ?>
 <div class="container profil">
-   
 
         <table class="table table-bordered">
         <tbody>
@@ -81,7 +80,7 @@ if ($row = $req->fetch())
     </form>
 
 
-
+<!-- Pagination -->
 <nav aria-label="Page navigation" class="center">
   <ul class="pagination justify-content-center ">
 	<?php 

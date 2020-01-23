@@ -21,9 +21,10 @@ $depart = ($pagecourante - 1) * $imgParPage;
 
 <!-- display gallerie -->
 
-<div class="container galerie">
+<div class="container profil">
 <h1 class="text-center galerietxt">Galerie</h1>
 <hr>
+<div class="row">
 
 
 <?php
@@ -32,11 +33,17 @@ $depart = ($pagecourante - 1) * $imgParPage;
 	while ($row = $req->fetch())
 		{
 			?>
-				<a href="photo.php?id_img=<?php echo $row['id_img'] ?>&page=<?php echo $pagecourante ?>">
-				<img width=31% src="<?php echo $row['img'] ?>" alt="<?php echo $row['id_img'] ?>" id="modalimg" name="id_img" class="modalimg">				
-				</a>
+            	<div class="col-4 text-center">
+					<a href="photo.php?id_img=<?php echo $row['id_img'] ?>&page=<?php echo $pagecourante ?>">
+					<img width=200px src="<?php echo $row['img'] ?>" alt="<?php echo $row['id_img'] ?>" id="modalimg" name="id_img" class="modalimg">				
+					</a>
+				</div>
+				
+
 		<?php
 		}?>
+				</div>
+
 
 		<!-- display modals -->
 		<!-- <div id="mymodal" class="modal">

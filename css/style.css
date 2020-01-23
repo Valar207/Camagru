@@ -1,5 +1,7 @@
+
 body{
     background-color: #FAFAFA;
+    min-width: 600px;
 }
 
 .green{
@@ -28,7 +30,7 @@ input[type="text"], input[type="password"],  input[type="email"]{
 .camagruh{
     font-family: billabong;
     font-size: 40px;
-    margin: auto;
+   
 }
 .margin{
     margin: auto;
@@ -56,13 +58,17 @@ input[type="text"], input[type="password"],  input[type="email"]{
 }
 
 .photo-ico{
-    width: 70px;
+    width: 40px;
 }
 .logout-ico, .galerie-ico, .profil-ico, .notif-ico{
     width: 25px;
+    margin: 15px;
 }
 .notif{
     position: absolute;
+}
+.navbar-expand-sm .navbar-nav{
+    flex-direction: row-reverse;
 }
 
 
@@ -339,3 +345,4 @@ video {
     box-shadow: none;
 }
 
+ 
