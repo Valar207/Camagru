@@ -33,9 +33,9 @@ $depart = ($pagecourante - 1) * $imgParPage;
 	while ($row = $req->fetch())
 		{
 			?>
-            	<div class="col-4 text-center">
+            	<div class="col-4" style="padding: 0.5% 1% 0.5% 1%;">
 					<a href="photo.php?id_img=<?php echo $row['id_img'] ?>&page=<?php echo $pagecourante ?>">
-					<img width=200px src="<?php echo $row['img'] ?>" alt="<?php echo $row['id_img'] ?>" id="modalimg" name="id_img" class="modalimg">				
+					<img width=100% src="<?php echo $row['img'] ?>" alt="<?php echo $row['id_img'] ?>" id="modalimg" name="id_img" class="modalimg">				
 					</a>
 				</div>
 				

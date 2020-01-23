@@ -67,8 +67,8 @@ if ($row = $req->fetch())
         while ($row = $req->fetch())
         {
             ?>
-            <div class="col-4 text-center">
-                <img width=95% src='<?php echo $row['img'] ?>' class="modalimg">
+            <div class="col-4 text-center" style="padding: 0.5% 1% 0.5% 1%;">
+                <img width=100% src='<?php echo $row['img'] ?>' class="modalimg">
                 <br>
                 <input type="hidden" name="pagecourante" value='<?php echo $pagecourante ?>'>
                 <input type="hidden" name="id_img" value="<?php echo $row['id_img'] ?>">

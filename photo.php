@@ -5,6 +5,7 @@ require "./config/database_connect.php";
 
 $id_img = $_GET['id_img'];
 $page =$_GET['page'];
+
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +23,19 @@ $page =$_GET['page'];
         <div class="row">
             <div class="col img_modal">
                 <?php
+                    if (isset($_GET['a'])){
+                        if ($_GET['a'] == 0){
+                            $req = $bdd->prepare("SELECT * FROM comments 
+                                                INNER JOIN users ON comments.id_user = users.idUsers 
+                                                INNER JOIN pictures ON comments.id_img = pictures.id_img WHERE
+                                                pictures.id_user = :id_user AND idUsers != :id_user");
+                                                if ($req->execute(array('id_user' => $_SESSION['id']))){
+                                                        $req = $bdd->prepare("UPDATE comments SET active = 0 WHERE id_img = :id_img");
+                                                        $req->execute(array('id_img' => $id_img));
+                                                        header("Location: photo.php?id_img=$id_img&page=$page");
+                                                }
+                        }
+                    }
                     $req = $bdd->prepare("SELECT img FROM pictures WHERE id_img=:id_img");
                     $req->execute(array('id_img' => $id_img));
                     if ($row = $req->fetch()){
@@ -39,7 +53,7 @@ $page =$_GET['page'];
                     <div class="comments">
                                 <?php
                                     $req = $bdd->prepare("SELECT `comment`, `nameUsers`, `img`, `date` FROM
-                                    comments INNER JOIN users ON users.idUsers = comments.id_user WHERE id_img=:id_img");
+                                    comments INNER JOIN users ON users.idUsers = comments.id_user WHERE id_img=:id_img ORDER BY `date` ASC");
                                     $req->execute(array('id_img' => $id_img));
                                     while ($row = $req->fetch()){
                                         $com = $row['comment'];
@@ -91,7 +105,9 @@ $page =$_GET['page'];
                 <div class="col right-col">
                 <div class="comments">
                             <?php
-                                $req = $bdd->prepare("SELECT `comment`, `nameUsers`, `img`, `date` FROM comments INNER JOIN users ON users.idUsers = comments.id_user WHERE id_img=:id_img");
+                                $req = $bdd->prepare("SELECT `comment`, `nameUsers`, `img`, `date` FROM comments 
+                                                    INNER JOIN users ON users.idUsers = comments.id_user 
+                                                    WHERE id_img=:id_img ORDER BY `date` ASC");
                                 $req->execute(array('id_img' => $id_img));
                                 while ($row = $req->fetch()){
                                     $com = $row['comment'];

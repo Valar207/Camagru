@@ -61,6 +61,7 @@ $sql = "CREATE TABLE `comments` (
     `id_img` int(11) NOT NULL,
     `comment` text,
     `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `active` BIT NOT NULL DEFAULT 1,
     FOREIGN KEY id_user(id_user)
     REFERENCES users(idUsers),
     FOREIGN KEY id_img(id_img)
@@ -75,6 +76,7 @@ $sql = "CREATE TABLE `likes` (
     `id_like` int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
     `id_user` int(11) NOT NULL,
     `id_img` int(11) NOT NULL,
+    `active` BIT NOT NULL DEFAULT 1,
     FOREIGN KEY id_user(id_user)
     REFERENCES users(idUsers),
     FOREIGN KEY id_img(id_img)

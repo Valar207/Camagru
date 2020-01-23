@@ -64,8 +64,23 @@ input[type="text"], input[type="password"],  input[type="email"]{
     width: 25px;
     margin: 15px;
 }
+.notif-on:hover .notif{
+    display: block;
+}
 .notif{
+    display: none;
     position: absolute;
+    border-radius: 5px;
+    border: 1px solid black;
+    list-style-type: none;
+    padding: 1%;
+    height: 120px;
+    overflow: overlay;
+    font-size: 15px;
+    background-color: white;
+}
+.notif::-webkit-scrollbar{
+    display: none;
 }
 .navbar-expand-sm .navbar-nav{
     flex-direction: row-reverse;
@@ -191,6 +206,11 @@ h6{
 .active a{
     color: white;
 }
+.n{
+    padding: 0px;
+    margin: 0px;
+    background-color: red;
+}
 
 .img-profil-edit{
     border-radius: 50%;
@@ -291,10 +311,8 @@ video {
 
 .comments{
     height: 400px;
-
     overflow: overlay;
     margin-top: 20px;
-
 }
 .comments::-webkit-scrollbar {
     display: none;

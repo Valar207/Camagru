@@ -1,5 +1,7 @@
 <?PHP
 session_start();
+require "config/database_connect.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,15 +22,6 @@ session_start();
                     if (!isset($_SESSION['nameUsers']))
                     {
                         ?>
-                            <!-- <div class="camagruh col-md-8">
-                                <a class="nav-left" href="./galerie.php">Camagru</a>
-                            </div>
-                            <div class="col-md-4 text-right margin">
-                                <a class="nav-right" href="./index.php"><img src="icones/profil.svg" class="profil-ico"></a>
-                                <a class="nav-right" href="./galerie.php"><img src="icones/galerie.svg" class="galerie-ico"></a>
-                            </div> -->
-
-
                             <div class="camagruh col-md-6 col-sm-6 col-6">
                             <a class="nav-left" href="./galerie.php">Camagru</a>
                         </div>         
@@ -45,7 +38,6 @@ session_start();
                                             <a class="" href="./galerie.php"><img src="icones/galerie.svg" class="galerie-ico"></a>
                                         </li>
                                         
-                                        </li>
                                     </ul>                                   
                                 </div>
                             </nav>
@@ -72,11 +64,33 @@ session_start();
                                         <li class="nav-item">
                                             <a class="" href="./galerie.php"><img src="icones/galerie.svg" class="galerie-ico"></a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item notif-on">
                                             <a class="" href="#"><img src="icones/notification.svg" class="notif-ico"></a>
-                                            <ul class="notif">
-                                                <li>1</li>
-                                            </ul>
+                                            <?php
+                                            /* notif commentaires */
+                                                $req = $bdd->prepare("SELECT * FROM comments 
+                                                INNER JOIN users ON comments.id_user = users.idUsers 
+                                                INNER JOIN pictures ON comments.id_img = pictures.id_img WHERE
+                                                pictures.id_user = :id_user AND idUsers != :id_user AND active = 1");
+                                                if ($req->execute(array('id_user' => $_SESSION['id']))){
+                                                    if ($req->rowCount() > 0){
+                                                        ?>
+                                                        <ul class="notif">
+                                                   <?php }
+                                                    while($row = $req->fetch()){
+                                                        $username = $row['nameUsers'];
+                                                        $com = $row['comment'];
+                                                        $id_img = $row['id_img'];
+                                                        ?>
+                                                        <li class="item"><a href="photo.php?id_img=<?php echo $id_img ?>&page=1&a=0"><?php echo $username ?> a commenté votre photo</a></li><hr>
+                                                    <?php }
+                                                    if ($req->rowCount() > 0)
+                                                        ?> </ul> <?php ;
+                                                }
+                                                else{
+                                                    
+                                                }
+                                            ?>
                                         </li>
                                     </ul>                                   
                                 </div>
