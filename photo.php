@@ -35,9 +35,6 @@ $page =$_GET['page'];
                                                         $req->execute(array('id_img' => $id_img));
                                                         //header("Location: photo.php?id_img=$id_img&page=$page");
                                                 }
-                                                else{
-                                                    exit;
-                                                }
                         }
                     }
                     $req = $bdd->prepare("SELECT img FROM pictures WHERE id_img=:id_img");

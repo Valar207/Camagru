@@ -1,11 +1,19 @@
 <?php
 require "header.php";
 
+$id_user = $_SESSION['id'];
 if (!isset($_SESSION['bio']))
 {
     $_SESSION['bio'] = '';
 }
 
+$req = $bdd->prepare("SELECT notif_com FROM users WHERE idUsers = :id_user");
+$req->execute(array('id_user' => $id_user));
+$notif_com = $req->fetch()['notif_com'];
+
+$req = $bdd->prepare("SELECT notif_like FROM users WHERE idUsers = :id_user");
+$req->execute(array('id_user' => $id_user));
+$notif_like = $req->fetch()['notif_like'];
     
 ?>
 
@@ -29,18 +37,7 @@ if (!isset($_SESSION['bio']))
                         <h1><?php echo $_SESSION['nameUsers']; ?></h1>
                     </div>
             </div>
-            <?php
 
-                if (isset($_GET['error']))
-                {
-                   
-                }
-                if (isset($_GET['success']))
-                {
-
-                }
-
-            ?>
                 <table class="table table-bordered">
                 <tbody>
                     <tr>
@@ -48,7 +45,14 @@ if (!isset($_SESSION['bio']))
                         <td><h5>Nouveau commentaire</h5></td>
                     </tr>
                     <tr>
-                        <td><input class="input" type="checkbox" name="notif_com" value="1"></td>
+                        <td>
+                            <!-- <input class="input" type="checkbox" name="notif_com" value="1"> -->
+                    
+                        <div class="custom-control custom-switch">
+                            <input <?php if ($notif_com == 1){echo 'checked';} ?> type="checkbox" class="custom-control-input" name="notif_com" onChange="submit()" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1"></label>
+                        </div>
+                    </td>
                         <td>Recevoir une notification par mail</td>
                     </tr>
                     <tr>
@@ -56,12 +60,19 @@ if (!isset($_SESSION['bio']))
                         <td><h5>Nouveau like</h5></td>
                     </tr>
                     <tr>
-                        <td><input class="input" type="checkbox" name="notif_like" value="1"></td>
+                        <td>
+                            <!-- <input class="input" type="checkbox" name="notif_like" value="1"> -->
+                    
+                        <div class="custom-control custom-switch">
+                            <input <?php if ($notif_like == 1){echo 'checked';} ?> type="checkbox" class="custom-control-input" name="notif_like" onChange="submit()" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1"></label>
+                        </div>
+                    </td>
                         <td>Recevoir une notification par mail</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td><button type="submit" name="submit">Valider</button></td>
+                        <!-- <td></td> -->
+                        <!-- <td><button type="submit" name="submit">Valider</button></td> -->
                     </tr>
                 </tbody>
                 </table>
