@@ -45,24 +45,6 @@ $depart = ($pagecourante - 1) * $imgParPage;
 				</div>
 
 
-		<!-- display modals -->
-		<!-- <div id="mymodal" class="modal">
-			<div class="modal-contentt">
-				<img src="" alt="" id="imgmodal" class="imginmodal">
-				<span class="closebtn">&times;</span>
-				<form action="includes/add_comment.inc.php" method="post" class="col-sm-5" style="display:inline-block">
-						<div class="col">
-						<input type="hidden" value="" id="id_img" name="id_img">
-
-							<textarea class="form-control" name="com" placeholder="Ajouter un commentaire..." rows="3"></textarea>
-							<button class="btn btn-primary btn-block" type="submit" name="save">Publier</button>
-							<input type="hidden" value="" id="valimg" name="valimg">
-						</div>
-				</form>
-			</div>
-		</div> -->
-
-
 
 
 <!-- Pagination -->

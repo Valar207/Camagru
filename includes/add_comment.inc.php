@@ -11,6 +11,8 @@ if (isset($_POST['com'])){
 
     $req = $bdd->prepare("INSERT INTO comments (id_user, id_img, comment) VALUES (:iduser, :id_img, :com)");
     if ($req->execute(array('iduser' => $id_user, 'id_img' => $id_img, 'com' => $com))){
+        $req = $bdd->prepare("UPDATE pictures SET comment = comment + 1 WHERE id_img = :id_img");
+        $req->execute(array('id_img' => $id_img));
         header("Location: ../photo.php?id_img=$id_img&page=$page");
     }
 }

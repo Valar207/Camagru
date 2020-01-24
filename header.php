@@ -44,7 +44,23 @@ require "config/database_connect.php";
                         </div>
                    <?php }
                     else 
-                    { ?>
+                    { 
+                        
+                            /*count com*/
+                            $req = $bdd->prepare("SELECT * FROM comments 
+                            INNER JOIN users ON comments.id_user = users.idUsers 
+                            INNER JOIN pictures ON comments.id_img = pictures.id_img WHERE
+                            pictures.id_user = :id_user AND idUsers != :id_user AND comments.active = 1");
+                            $req->execute(array('id_user' => $_SESSION['id']));
+                            $act_com = $req->rowCount();
+
+                            /*count likes*/
+                            $req = $bdd->prepare("SELECT * FROM likes 
+                            INNER JOIN users ON likes.id_user = users.idUsers 
+                            INNER JOIN pictures ON likes.id_img = pictures.id_img WHERE
+                            pictures.id_user = :id_user AND idUsers != :id_user AND likes.active = 1");
+                            $req->execute(array('id_user' => $_SESSION['id']));
+                            $act_like = $req->rowCount();?>
                         
                         <div class="camagruh col-md-6 col-sm-6 col-6">
                             <a href="camera.php"><img src="icones/photo.png" alt="" class="photo-ico"></a>
@@ -67,42 +83,48 @@ require "config/database_connect.php";
                                         <li class="nav-item notif-on">
                                             <a class="" href="#"><img src="icones/notification.svg" class="notif-ico"></a>
                                             <?php
+                                            if ($act_like > 0 || $act_com > 0){
+                                                ?>
+                                                <ul class="notifs">
+                                            <?php }
+
                                             /* notif commentaires */
                                                 $req = $bdd->prepare("SELECT * FROM comments 
                                                 INNER JOIN users ON comments.id_user = users.idUsers 
                                                 INNER JOIN pictures ON comments.id_img = pictures.id_img WHERE
-                                                pictures.id_user = :id_user AND idUsers != :id_user AND active = 1");
-                                                if ($req->execute(array('id_user' => $_SESSION['id']))){
-                                                    if ($req->rowCount() > 0){
-                                                        ?>
-                                                        <ul class="notif">
-                                                   <?php }
+                                                pictures.id_user = :id_user AND idUsers != :id_user AND comments.active = 1");
+                                                $req->execute(array('id_user' => $_SESSION['id']));
+
                                                     while($row = $req->fetch()){
                                                         $username = $row['nameUsers'];
-                                                        $com = $row['comment'];
                                                         $id_img = $row['id_img'];
                                                         ?>
-                                                        <li class="item"><a href="photo.php?id_img=<?php echo $id_img ?>&page=1&a=0"><?php echo $username ?> a commenté votre photo</a></li><hr>
+                                                        <li class="item notif"><a href="photo.php?id_img=<?php echo $id_img ?>&page=1&a=0"><?php echo $username ?> a commenté votre photo</a></li>
                                                     <?php }
+
+                                                    $req = $bdd->prepare("SELECT * FROM likes 
+                                                    INNER JOIN users ON likes.id_user = users.idUsers 
+                                                    INNER JOIN pictures ON likes.id_img = pictures.id_img WHERE
+                                                    pictures.id_user = :id_user AND idUsers != :id_user AND likes.active = 1");
+                                                    $req->execute(array('id_user' => $_SESSION['id']));
+                                                   
+                                                    while($row = $req->fetch()){
+                                                        $username = $row['nameUsers'];
+                                                        $id_img = $row['id_img'];
+                                                        ?>
+                                                        <li class="item notif"><a href="photo.php?id_img=<?php echo $id_img ?>&page=1&a=0"><?php echo $username ?> a aimé votre photo</a></li>
+                                                    <?php }
+
                                                     if ($req->rowCount() > 0)
-                                                        ?> </ul> <?php ;
-                                                }
-                                                else{
-                                                    
-                                                }
+                                                        ?> </ul> <?php ; 
                                             ?>
                                         </li>
                                     </ul>                                   
                                 </div>
                             </nav>
                         </div>
-     
-
-
-
-                            
-                    <?php } ?>
-                
+                    <?php } 
+                    ?>
     </div>
 </div>
 </div>

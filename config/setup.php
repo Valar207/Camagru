@@ -47,6 +47,7 @@ $sql = "CREATE TABLE `pictures` (
     `img` varchar(255) NOT NULL,
     `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `like` int(11) NOT NULL DEFAULT '0',
+    `comment` int(11) NOT NULL DEFAULT '0',
     FOREIGN KEY id_user(id_user)
     REFERENCES users(idUsers)
   );";

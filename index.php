@@ -1,12 +1,13 @@
 <?php
     require "header.php";
-    require "./config/database_connect.php";
 
     if (isset($_SESSION['nameUsers']))
     {
         header("Location: galerie.php");
-        exit();
+        exit;
     }
+
+    //require "./config/database_connect.php";
 ?>
 
 <div class="login-form">

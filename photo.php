@@ -1,5 +1,4 @@
 <?php
-
 require "header.php";
 require "./config/database_connect.php";
 
@@ -32,7 +31,12 @@ $page =$_GET['page'];
                                                 if ($req->execute(array('id_user' => $_SESSION['id']))){
                                                         $req = $bdd->prepare("UPDATE comments SET active = 0 WHERE id_img = :id_img");
                                                         $req->execute(array('id_img' => $id_img));
-                                                        header("Location: photo.php?id_img=$id_img&page=$page");
+                                                        $req = $bdd->prepare("UPDATE likes SET active = 0 WHERE id_img = :id_img");
+                                                        $req->execute(array('id_img' => $id_img));
+                                                        //header("Location: photo.php?id_img=$id_img&page=$page");
+                                                }
+                                                else{
+                                                    exit;
                                                 }
                         }
                     }
