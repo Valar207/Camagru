@@ -363,4 +363,9 @@ video {
     box-shadow: none;
 }
 
- 
+/* camera */
+
+.overlay{
+    position: absolute;
+    z-index: 10;
+}

@@ -46,8 +46,6 @@ $notif_like = $req->fetch()['notif_like'];
                     </tr>
                     <tr>
                         <td>
-                            <!-- <input class="input" type="checkbox" name="notif_com" value="1"> -->
-                    
                         <div class="custom-control custom-switch">
                             <input <?php if ($notif_com == 1){echo 'checked';} ?> type="checkbox" class="custom-control-input" name="notif_com" onChange="submit()" id="customSwitch1">
                             <label class="custom-control-label" for="customSwitch1"></label>
@@ -61,8 +59,6 @@ $notif_like = $req->fetch()['notif_like'];
                     </tr>
                     <tr>
                         <td>
-                            <!-- <input class="input" type="checkbox" name="notif_like" value="1"> -->
-                    
                         <div class="custom-control custom-switch">
                             <input <?php if ($notif_like == 1){echo 'checked';} ?> type="checkbox" class="custom-control-input" name="notif_like" onChange="submit()" id="customSwitch2">
                             <label class="custom-control-label" for="customSwitch2"></label>
@@ -71,8 +67,6 @@ $notif_like = $req->fetch()['notif_like'];
                         <td>Recevoir une notification par mail</td>
                     </tr>
                     <tr>
-                        <!-- <td></td> -->
-                        <!-- <td><button type="submit" name="submit">Valider</button></td> -->
                     </tr>
                 </tbody>
                 </table>

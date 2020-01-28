@@ -8,6 +8,8 @@ $req->execute();
 $imgtot = $req->rowCount();
 $req->closeCursor();
 $pagestot = ceil($imgtot / $imgParPage);
+if ($pagestot == 0)
+	$pagestot = 1;
 
 if (isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] <= $pagestot){
 	$_GET['page'] = intval($_GET['page']);
@@ -45,8 +47,6 @@ $depart = ($pagecourante - 1) * $imgParPage;
 				</div>
 
 
-
-
 <!-- Pagination -->
 <nav aria-label="Page navigation" class="center">
   <ul class="pagination justify-content-center ">
@@ -64,7 +64,9 @@ $depart = ($pagecourante - 1) * $imgParPage;
 		if ($pagecourante == $pagestot)
 			echo '<li class="page-item disabled"><a class="page-link">>></a></li>';
 		else
+		{
 			echo '<li class="page-item"><a class="page-link" href="galerie.php?page='.($pagecourante + 1).'">>></a></li>';
+		}
 	?>
   </ul>
 </nav>

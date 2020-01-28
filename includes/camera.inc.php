@@ -36,13 +36,34 @@ if(isset($_POST['camupload']))
 
     $path_img = './post_img/'.$_SESSION['nameUsers'].'_'.$id_img.'.png';
 
+
     $req = $bdd->prepare("UPDATE pictures SET img = :img WHERE id_img = :id_img");
     $req->execute(array('img' => $path_img, 'id_img' => $id_img));
 
     /*save img dans post_img*/
-    $imageSave = imagepng($source_img, '../post_img/'.$_SESSION['nameUsers'].'_'.$id_img.'.png');
+    imagepng($source_img, '../post_img/'.$_SESSION['nameUsers'].'_'.$id_img.'.png');
 
     imagedestroy($source_img);
+
+
+
+    // add sticker on the saved pic
+
+    $dest = imagecreatefrompng('../post_img/'.$_SESSION['nameUsers'].'_'.$id_img.'.png');
+    $src = imagecreatefrompng('../stickers/frame.png');
+    imagealphablending($dest, true);
+    imagesavealpha($dest, true);
+
+    imagecopy($dest, $src, 0, 0, 0, 0, 480, 480);
+    imagepng($dest, '../post_img/'.$_SESSION['nameUsers'].'_'.$id_img.'.png');
+    imagedestroy($dest);
+    imagedestroy($src);
+
+
+
+
+
+
     header("Location: ../camera.php");
 }
 else{

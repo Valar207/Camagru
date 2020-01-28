@@ -1,5 +1,5 @@
 function OpenCam() {
-	navigator.mediaDevices.getUserMedia({ audio: false, video: { width: 800, height: 480 } }).then(function(mediaStream) {
+	navigator.mediaDevices.getUserMedia({ audio: false, video: { width: 480, height: 480 } }).then(mediaStream => {
 		var video = document.getElementById('sourcevid');
 		video.srcObject = mediaStream;
 		video.onloadedmetadata = function(e) {
@@ -10,12 +10,10 @@ function OpenCam() {
 function capture(){
 	var vivi = document.getElementById('sourcevid');
 	var canvas1 = document.getElementById('cvs').getContext('2d');
-	canvas1.drawImage(vivi, -160,0, 800, 480);
+	canvas1.drawImage(vivi, 0,0, 480, 480);
 	var base64=document.getElementById('cvs').toDataURL("image/*");	//l'image au format base 64
-	document.getElementById('tar').value='';
 	document.getElementById('tar').value=base64;
-}
-
+}	
 // var modal = document.getElementById('mymodal');
 // var modalImg = document.getElementById("imgmodal");
 // var closebtn = modal.querySelector(".closebtn");
