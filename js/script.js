@@ -16,32 +16,32 @@ function capture(){
 	document.getElementById('tar').value=base64;
 }
 
-var modal = document.getElementById('mymodal');
-var modalImg = document.getElementById("imgmodal");
-var closebtn = modal.querySelector(".closebtn");
-var images = document.querySelectorAll(".modalimg");
-var idc = document.getElementById('idc');
-var valimg = document.getElementById('valimg');
-var id_img = document.getElementById('id_img');
+// var modal = document.getElementById('mymodal');
+// var modalImg = document.getElementById("imgmodal");
+// var closebtn = modal.querySelector(".closebtn");
+// var images = document.querySelectorAll(".modalimg");
+// var idc = document.getElementById('idc');
+// var valimg = document.getElementById('valimg');
+// var id_img = document.getElementById('id_img');
 
 
-closebtn.addEventListener('click', closemodal);
-window.onclick = function(event) {
-    if (event.target == modal)
-        modal.style.display = "none";
-}
-    for (i = 0; i < images.length; i++) 
-        images[i].addEventListener("click", openmodal);
-    function openmodal()
-    {
-        modal.style.display = 'block';
-        modalImg.src = this.src;
-        modalImg.alt = this.alt;
-        valimg.value = this.alt;
-        id_img.value = this.alt;
-    }
-    function closemodal()
-    {
-        modal.style.display = 'none';
-    }
+// closebtn.addEventListener('click', closemodal);
+// window.onclick = function(event) {
+//     if (event.target == modal)
+//         modal.style.display = "none";
+// }
+//     for (i = 0; i < images.length; i++) 
+//         images[i].addEventListener("click", openmodal);
+//     function openmodal()
+//     {
+//         modal.style.display = 'block';
+//         modalImg.src = this.src;
+//         modalImg.alt = this.alt;
+//         valimg.value = this.alt;
+//         id_img.value = this.alt;
+//     }
+//     function closemodal()
+//     {
+//         modal.style.display = 'none';
+//     }
 
