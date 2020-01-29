@@ -3,8 +3,21 @@ session_start();
 require "../config/database_connect.php";
 $id = $_SESSION['id'];
 
+if(isset($_POST['imgupload']))
+{
+    echo 'okokok';exit;
+}
+
 if(isset($_POST['camupload']))
 {
+
+    if (isset($_POST['sticker_v']))
+        $sticker = $_POST['sticker_v'];
+    else
+        $sticker = '';
+
+
+
     $base64 = $_POST['camupload'];
     list($src, $base64) = explode(';', $base64);
     list($base64, $data) = explode(',', $base64);
@@ -50,7 +63,7 @@ if(isset($_POST['camupload']))
     // add sticker on the saved pic
 
     $dest = imagecreatefrompng('../post_img/'.$_SESSION['nameUsers'].'_'.$id_img.'.png');
-    $src = imagecreatefrompng('../stickers/frame.png');
+    $src = imagecreatefrompng($sticker);
     imagealphablending($dest, true);
     imagesavealpha($dest, true);
 

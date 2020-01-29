@@ -369,3 +369,11 @@ video {
     position: absolute;
     z-index: 10;
 }
+.stickers{
+    height: 480px;
+    background-color: #FAFAFA;
+    overflow: overlay;
+}
+.sticker{
+    background-color: #FAFAFA;
+}

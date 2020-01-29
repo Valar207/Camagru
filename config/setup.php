@@ -11,7 +11,7 @@ catch(Exception $e)
 $sql = "CREATE DATABASE IF NOT EXISTS camagru";
 $req = $bdd->prepare($sql);
 if ($req->execute())
-    echo "camagru database successfully created.\n<br>";
+    echo "Camagru database successfully created.\n<br>";
 $req->closeCursor();
 try
 {
@@ -87,4 +87,23 @@ $req = $bdd->prepare($sql);
 if ($req->execute())
     echo "Likes table successfully created.\n<br>";
 $req->closeCursor();
+
+$sql = "CREATE TABLE `stickers` (
+    `id_sticker` int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    `sticker` varchar(255) NOT NULL
+  );";
+$req = $bdd->prepare($sql);
+if ($req->execute())
+    echo "Stickers table successfully created.\n<br>";
+$req->closeCursor();
+$sql = "INSERT INTO `stickers` (sticker) 
+        VALUES 
+        ('stickers/batman.png'),
+        ('stickers/cat.png'),
+        ('stickers/glasses.png'),
+        ('stickers/lego.png'),
+        ('stickers/phone.png')";
+$req = $bdd->prepare($sql);
+if ($req->execute())
+    echo "Items successfully inserted in Stickers table.\n<br>";
 ?>

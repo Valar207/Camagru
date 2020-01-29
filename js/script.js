@@ -14,6 +14,16 @@ function capture(){
 	var base64=document.getElementById('cvs').toDataURL("image/*");	//l'image au format base 64
 	document.getElementById('tar').value=base64;
 }	
+
+function changeSticker(src){
+	var overlay = document.getElementById('overlay');
+	let sticker_v = document.getElementById('sticker_v');	
+	overlay.src = src;
+
+	sticker_v.value = src;
+	console.log(sticker_v.value);
+}
+
 // var modal = document.getElementById('mymodal');
 // var modalImg = document.getElementById("imgmodal");
 // var closebtn = modal.querySelector(".closebtn");
