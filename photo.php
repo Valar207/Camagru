@@ -4,8 +4,7 @@ require "./config/database_connect.php";
 
 $id_img = $_GET['id_img'];
 $page =$_GET['page'];
-if (isset($_SESSION['nameUsers']))
-{
+
 ?>
 
 <!DOCTYPE html>
@@ -160,9 +159,3 @@ if (isset($_SESSION['nameUsers']))
 
 </html>
 
-<?php }
-else{
-    header("Location: index.php");
-}
-
-?>
