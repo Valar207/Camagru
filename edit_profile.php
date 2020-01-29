@@ -31,7 +31,7 @@ if (!isset($_SESSION['bio']))
                             <button class="btn btn-primary upload-img" type="submit" name="submit" style="display:block">Valider</button>  
                         </form>
 
-                    </div>
+                    </div> 
                 </div>
             <form action="./includes/edit_profile.inc.php" method="post" class="form-right">
                 

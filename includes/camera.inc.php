@@ -3,9 +3,60 @@ session_start();
 require "../config/database_connect.php";
 $id = $_SESSION['id'];
 
-if(isset($_POST['imgupload']))
+if(isset($_POST['submit']) && !isset($_POST['camupload']))
 {
-    echo 'okokok';exit;
+    $file = $_FILES['file'];
+    $filename = $_FILES['file']['name'];
+    $filetmpname = $_FILES['file']['tmp_name'];
+    $filesize = $_FILES['file']['size'];
+    $fileerror = $_FILES['file']['error'];
+    $filetype = $_FILES['file']['type'];
+    $fileext = explode('.', $filename);
+    $fileactualext = strtolower(end($fileext));
+    $allowed = array('jpg', 'jpeg', 'png');
+
+    if (in_array($fileactualext, $allowed))
+    {
+        if ($fileerror === 0)
+        {
+            if ($filesize < 1000000){
+                $filenamenew = $_SESSION['id'].".".$fileactualext;
+                $filedestination = '../post_img/'.$filenamenew;
+
+                /*increment img_nbr*/
+                $req = $bdd->prepare("UPDATE users SET img_nbr = img_nbr+1 WHERE idUsers= :id");
+                $req->execute(array('id' => $id));
+                $img = '';
+                /*insert image dans bdd*/
+                $req = $bdd->prepare("INSERT INTO pictures (id_user, img) VALUES (:id, :img)");
+                $req->execute(array('id' => $id, 'img' => $img));         
+
+                /* get img id */
+                $req = $bdd->prepare("SELECT id_img FROM pictures WHERE img = :img");
+                $req->execute(array('img' => $img));
+                if ($row = $req->fetch()){
+                    $id_img = $row['id_img'];
+                }
+                $img = './post_img/'.$_SESSION['nameUsers'].'_'.$id_img.'.png';
+
+                $req = $bdd->prepare("UPDATE pictures SET img = :img WHERE id_img = :id_img");
+                $req->execute(array('img' => $img, 'id_img' => $id_img));
+
+                move_uploaded_file($filetmpname, '.'.$img);
+                header("Location: ../camera.php");
+            }
+            else{
+                echo 'file too big';
+            }
+        }
+        else{
+            echo 'error uploading file';
+        }
+    }
+    else{
+        header("Location: ../edit_profile.php?upload=fail");
+    }
+    
 }
 
 if(isset($_POST['camupload']))

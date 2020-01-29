@@ -1,7 +1,8 @@
 <?php
 require "header.php";
 
-
+if (isset($_SESSION['nameUsers']))
+{
 ?>
 <div class="container edit_profil">
     <div class="row">
@@ -70,3 +71,10 @@ require "header.php";
         </div>
     </div>
 </div>
+
+<?php }
+else{
+    header("Location: index.php");
+}
+
+?>

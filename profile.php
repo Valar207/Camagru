@@ -22,7 +22,8 @@ $req->execute(array('id' => $id));
 if ($row = $req->fetch())
     $img_nbr = $row['img_nbr'];
 
-
+    if (isset($_SESSION['nameUsers']))
+    {
 ?>
 <div class="container profil">
 
@@ -103,3 +104,8 @@ if ($row = $req->fetch())
 </nav>
 
 </div>
+
+<?php }
+else{
+    header("Location: index.php");
+}

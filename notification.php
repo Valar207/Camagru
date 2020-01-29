@@ -15,6 +15,10 @@ $req = $bdd->prepare("SELECT notif_like FROM users WHERE idUsers = :id_user");
 $req->execute(array('id_user' => $id_user));
 $notif_like = $req->fetch()['notif_like'];
     
+if (isset($_SESSION['nameUsers']))
+{
+$id = $_SESSION['id'];
+?>
 ?>
 
 <div class="container edit_profil">
@@ -77,3 +81,10 @@ $notif_like = $req->fetch()['notif_like'];
         </div>
     </div>
 </div>
+
+<?php }
+else{
+    header("Location: index.php");
+}
+
+?>

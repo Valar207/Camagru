@@ -6,7 +6,8 @@ if (!isset($_SESSION['bio']))
     $_SESSION['bio'] = '';
 }
 
-    
+if (isset($_SESSION['nameUsers']))
+{
 ?>
 
 <div class="container edit_profil">
@@ -98,3 +99,10 @@ if (!isset($_SESSION['bio']))
         </div>
     </div>
 </div>
+
+<?php }
+else{
+    header("Location: index.php");
+}
+
+?>

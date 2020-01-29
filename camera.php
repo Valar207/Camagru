@@ -13,14 +13,20 @@ $id = $_SESSION['id'];
         <div class="row">
 
             <div class="camera col-md-8">
-            <form action="includes/camera.inc.php" method="post">
+            <form action="includes/camera.inc.php" method="post" enctype="multipart/form-data">
                 <img draggable="false" class="overlay" name="sticker" id="overlay" src="">
                 <input  value="" type="hidden"  id="sticker_v" name="sticker_v">
                 <video id="sourcevid"></video>
                 <canvas id="cvs" height='480' width='480' style="display:none"></canvas><br>
-                <button class="btn btn-primary" name="camupload" id='tar' onclick='capture()'>photo</button>
-                <button class="btn btn-primary" name="imgupload" id='tar' type="submit">upload image</button>
+                <button class="btn btn-primary" name="camupload" id='tar' onclick='capture()'>Photo</button>
+
+
+                <label class="modifpdp" for="upload" style="display:inline-block; font-size:15px">Upload image</label>
+                <input id="upload" type="file" name="file" accept="image/*" style="display:none;">
+                <button class="btn btn-primary" type="submit" name="submit" style="display:inline-block">Valider</button>  
+
             </form>
+          
             </div>
 
             <div class="col-md-3 stickers" id="sticker">
