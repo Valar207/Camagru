@@ -57,17 +57,20 @@ if (isset($_GET['error']))
                         $req->execute();
                         while ($row = $req->fetch())
                         { ?>
-                            <img width=200px src='<?php echo $row['sticker'] ?>' onclick='changeSticker(this.src)' class="sticker"><br>
+                        <form action="includes/sticker.inc.php" method="post">
+                            <input type="hidden" name="sticker" value="<?php echo $row['sticker'] ?>">
+                            <button type="submit" name="delstick" value='<?php echo $row['sticker'] ?>' class="croix" >&times;</button>
+                            <img class="sticker" width=200px src='<?php echo $row['sticker'] ?>' onclick='changeSticker(this.src)'><br>
+                        </form>
+
                     <?php }
                     ?>
                 </div>
-                        <form action="includes/upload_sticker.inc.php" method="post" enctype="multipart/form-data">
+                        <form action="includes/sticker.inc.php" method="post" enctype="multipart/form-data">
                             <label class="modifpdp" for="upload2" style="display:block; font-size:15px">Upload sticker</label>
                             <input id="upload2" type="file" name="file2" accept="image/*" style="display:none;">
                             <button class="btn btn-primary" type="submit" name="submit2">Valider</button>  
                         </form>
-
-           
             </div>
                              
         </div>

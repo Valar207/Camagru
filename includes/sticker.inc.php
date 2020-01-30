@@ -3,6 +3,17 @@ session_start();
 require "../config/database_connect.php";
 $id = $_SESSION['id'];
 
+
+if(isset($_POST['delstick']))
+{
+    $sticker = $_POST['sticker'];
+    $req = $bdd->prepare("DELETE FROM stickers WHERE sticker= :sticker");
+    $req->execute(array('sticker' => $sticker));
+    header("Location: ../camera.php");
+}
+
+
+
 if(isset($_POST['submit2']))
 {
     $file = $_FILES['file2'];
