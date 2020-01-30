@@ -21,7 +21,7 @@ if (!isset($_SESSION['bio']))
         <div class="col-md-8 nav-profil-right">
         <div class="row" style="margin-bottom: 15px; margin-top: 20px;">
                     <div class="col-sm-4 text-right">
-                        <img src="<?php echo $_SESSION['img_p']; ?>" class="img-profil-edit" alt="...">
+                        <img src="<?php echo $_SESSION['img_p']; ?>" class="img-profil-edit">
                     </div>
                     <div class="col-sm-6">
                         <h1><?php echo $_SESSION['nameUsers']; ?></h1>
@@ -111,7 +111,7 @@ if (!isset($_SESSION['bio']))
                 <div class="form-group row">
                     <div class="col-sm-4 text-right"></div>
                     <div class="col-sm-6">
-                        <button class="btn btn-primary btn-block" type="submit" name="save">Modifier</button>  
+                        <button class="btn btn-primary btn-block modifp" type="submit" name="save">Modifier</button>  
                     </div>
                 </div>
             </form>

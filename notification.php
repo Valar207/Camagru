@@ -19,7 +19,6 @@ if (isset($_SESSION['nameUsers']))
 {
 $id = $_SESSION['id'];
 ?>
-?>
 
 <div class="container edit_profil">
     <div class="row">
@@ -42,7 +41,7 @@ $id = $_SESSION['id'];
                     </div>
             </div>
 
-                <table class="table table-bordered">
+                <table class="table">
                 <tbody>
                     <tr>
                         <td></td>

@@ -91,7 +91,7 @@ if (isset($_SESSION['nameUsers']))
                 <div class="form-group row">
                     <div class="col-sm-4 text-right"></div>
                     <div class="col-sm-6">
-                        <button class="btn btn-primary btn-block" type="submit" name="save">Modifier</button>  
+                        <button class="btn btn-primary btn-block modifp" type="submit" name="save">Modifier</button>  
                     </div>
                 </div>
             </form>

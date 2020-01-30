@@ -23,12 +23,7 @@ if (isset($_GET['error']))
         Ajoutez un sticker au format png.
     </div>';
 }
-
 ?>
-
-
-
-
         <div class="row justify-content-between">
             <div class="camera col-md-7">
                 <form action="includes/camera.inc.php" method="post" enctype="multipart/form-data">
@@ -72,9 +67,7 @@ if (isset($_GET['error']))
                             <button class="btn btn-primary" type="submit" name="submit2">Valider</button>  
                         </form>
             </div>
-                             
         </div>
-
         <div class="row disp-shots">
             <?php
                 $req = $bdd->prepare("SELECT * FROM pictures WHERE id_user= :id ORDER BY `date` DESC");

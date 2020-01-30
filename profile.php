@@ -17,32 +17,44 @@ else
 	$pagecourante = 1;
 $depart = ($pagecourante - 1) * $imgParPage;
 
+/*count number of img for current user*/
 $req = $bdd->prepare("SELECT img_nbr FROM users WHERE idUsers = :id");
 $req->execute(array('id' => $id));
 if ($row = $req->fetch())
     $img_nbr = $row['img_nbr'];
+
+/*count number of likes for current user*/
+$req = $bdd->prepare("SELECT * FROM likes INNER JOIN pictures ON likes.id_img=pictures.id_img WHERE pictures.id_user = :id");
+$req->execute(array('id' => $id));
+$likes = $req->rowCount();
+
+/*count number of comments for current user*/
+$req = $bdd->prepare("SELECT * FROM comments INNER JOIN pictures ON comments.id_img=pictures.id_img WHERE pictures.id_user = :id");
+$req->execute(array('id' => $id));
+$comments = $req->rowCount();
 
     if (isset($_SESSION['nameUsers']))
     {
 ?>
 <div class="container profil">
 
-        <table class="table table-bordered">
+        <table class="table">
         <tbody>
-            <tr>
-            <td class="text-right" rowspan="2">
-                <img src="<?php echo $_SESSION['img_p']; ?>" class="img-profil">
-            </td>
-            <td>
-                <h1><?php echo $_SESSION['nameUsers']; ?></h1>
-            </td>
-            <td>
-                <button class="btn btn-primary modifp" onclick="window.location.href = 'edit_profile.php';">Modifier le profil</button>
-            </td>
+            <tr class="text-center">
+                <td class="text-right" rowspan="2">
+                    <img src="<?php echo $_SESSION['img_p']; ?>" class="img-profil">
+                </td>
+                <td>
+                    <h1><?php echo $_SESSION['nameUsers']; ?></h1>
+                </td>
+                <td >
+                    <button class="btn btn-primary modifp" onclick="window.location.href = 'edit_profile.php';">Modifier le profil</button>
+                </td>
             </tr>
-            <tr>
-            <td><?php echo $img_nbr; ?> Publications</td>
-            <td></td>
+            <tr class="text-center">
+                <td><?php echo $img_nbr; ?> <br> Publications</td>
+                <td><?php echo $likes; ?> <br> Likes</td>
+                <td><?php echo $comments; ?> <br> Commentaires</td>
             </tr>
         </tbody>
         </table>
@@ -56,7 +68,6 @@ if ($row = $req->fetch())
                     </div>';
             }
         }
-
         ?>
             
     <form action="includes/profile_delpics.inc.php" method="post">
