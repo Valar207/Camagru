@@ -370,15 +370,75 @@ video {
     position: absolute;
     z-index: 10;
 }
+.content-stickers{
+    height: 581px;
+    background-color: white;
+    border: solid 1px #E6E6E6;
+    border-radius: 10px;
+}
 .stickers{
-    height: 480px;
+    height: 485px;
+    overflow: auto;
+    border-radius: 10px;
     background-color: #FAFAFA;
-    overflow: overlay;
+    border: solid 1px #E6E6E6;
+
+    margin-top: 20px;
 }
+.stickers::-webkit-scrollbar {
+    width: 12px;
+}
+.stickers::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 20px;
+}
+.stickers::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
 .sticker{
-    background-color: #FAFAFA;
+    margin: 2px;
+    cursor: pointer;
 }
-.zzz{
-    max-width: 480px;
-    max-height: 480px;
+.shot{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(0, 123, 255, 1);
+    border: solid rgba(197, 197, 197, 0.644) 3px;
+}
+.shot:hover{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(0, 123, 255, 0.8);
+    border: solid rgba(197, 197, 197, 0.5) 4px;
+}
+.camera{
+    background-color: white;
+    border: solid 1px #E6E6E6;
+    border-radius: 10px;
+    padding: 20px 0 5px 0;
+    min-width: 520px;
+    margin-bottom: 20px;
+}
+.disp-shots{
+    min-height: 300px;
+    max-height: 400px;
+    overflow: auto;
+    background-color: white;
+    border: solid 1px #E6E6E6;
+    border-radius: 10px;
+}
+.disp-shots::-webkit-scrollbar {
+    width: 12px;
+}
+.disp-shots::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 20px;
+}
+.disp-shots::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }

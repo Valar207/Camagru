@@ -42,6 +42,9 @@ if(isset($_POST['submit']) && !isset($_POST['camupload']))
                 $req = $bdd->prepare("UPDATE pictures SET img = :img WHERE id_img = :id_img");
                 $req->execute(array('img' => $img, 'id_img' => $id_img));
 
+                // echo $filetmpname;
+                // echo '<br>';
+                // echo $img;exit;
                 move_uploaded_file($filetmpname, '.'.$img);
                 header("Location: ../camera.php");
             }
@@ -54,9 +57,8 @@ if(isset($_POST['submit']) && !isset($_POST['camupload']))
         }
     }
     else{
-        header("Location: ../edit_profile.php?upload=fail");
+        header("Location: ../camera.php");
     }
-    
 }
 
 if(isset($_POST['camupload']))
@@ -122,11 +124,6 @@ if(isset($_POST['camupload']))
     imagepng($dest, '../post_img/'.$_SESSION['nameUsers'].'_'.$id_img.'.png');
     imagedestroy($dest);
     imagedestroy($src);
-
-
-
-
-
 
     header("Location: ../camera.php");
 }
