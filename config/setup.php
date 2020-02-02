@@ -124,7 +124,6 @@ if ($req->execute())
 $sql = "INSERT INTO `pictures` (`id_img`, `id_user`, `img`, `date`, `like`, `comment`) VALUES
 (1, 1, './post_img/food_1.png', '2020-02-02 13:30:57', 0, 0),
 (3, 1, './post_img/food_3.png', '2020-02-02 13:34:29', 0, 0),
-(4, 1, './post_img/food_4.png', '2020-02-02 13:35:43', 0, 0),
 (7, 1, './post_img/food_7.png', '2020-02-02 13:38:23', 0, 0),
 (8, 1, './post_img/food_8.png', '2020-02-02 13:38:29', 0, 0),
 (10, 1, './post_img/food_10.png', '2020-02-02 13:41:07', 0, 0),

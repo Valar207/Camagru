@@ -29,7 +29,7 @@ if (isset($_GET['error']))
                 <form action="includes/camera.inc.php" method="post" enctype="multipart/form-data">
                     <img draggable="false" class="overlay" name="sticker" id="overlay" src="">
                     <input  value="" type="hidden"  id="sticker_v" name="sticker_v">
-                    <video id="sourcevid"></video>
+                    <video class="video" id="sourcevid"></video>
                     <canvas id="cvs" height='480' width='480' style="display:none"></canvas><br>
 
                     <div class="row">

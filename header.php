@@ -62,12 +62,12 @@ require "config/database_connect.php";
                             $act_like = $req->rowCount(); 
                             ?>
                         
-                        <div class="camagruh col-md-6 col-sm-6 col-6">
-                            <a href="camera.php"><img src="icones/photo.png" alt="" class="photo-ico"></a>
+                        <div class="camagruh col-md-6 col-sm-6 col-3">
                             <a class="nav-left" href="./galerie.php">Camagru</a>
+                            <a href="camera.php"><img src="icones/photo.png" alt="" class="photo-ico"></a>
                         </div>         
                         
-                        <div class="col-md-6 col-sm-6 col-6">
+                        <div class="col-md-6 col-sm-6 col-9">
                                <nav class="navbar-expand-lg navbar-expand-sm navbar-expand-xs navbar-light ">
                                 <div class="">
                                     <ul class="nav navbar-nav nv-right">
