@@ -51,6 +51,26 @@ $page =$_GET['page'];
                 if (isset($_SESSION['nameUsers'])){?>
 
                 <div class="col right-col">
+                     
+
+
+
+
+                            <?php
+                                $req = $bdd->prepare("SELECT users.img, nameUsers FROM users INNER JOIN pictures ON users.idUsers = pictures.id_user
+                                                        WHERE pictures.id_img = :id_img");
+                                $req->execute(array('id_img' => $id_img));
+                                if ($row = $req->fetch()){
+                                    $img_user = $row['img'];
+                                    $name_user = $row['nameUsers'];
+                                }
+                            ?>
+                            <tr class="">
+                                <td><img src="<?php echo $img_user;?>" class="user_img"></td>
+                                <td><h3 style="display:inline-block;"><?php echo $name_user;?></h3><td>
+                            </tr>
+                            
+
                     <div class="comments">
                                 <?php
                                     $req = $bdd->prepare("SELECT `comment`, `nameUsers`, `img`, `date` FROM
@@ -91,7 +111,7 @@ $page =$_GET['page'];
                         <span> <?php echo $nb_like ?></span>
                     </div>
 
-                    <hr style="margin-left:-30px">
+                    <hr>
                     <form autocomplete="off" action="includes/add_comment.inc.php" method="post" class="col">
                                 <input type="hidden" value="<?php echo $id_img ?>" name="id_img">
                                 <input type="hidden" value="<?php echo $page ?>" name="page">

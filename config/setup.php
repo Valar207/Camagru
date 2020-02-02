@@ -106,4 +106,48 @@ $sql = "INSERT INTO `stickers` (sticker)
 $req = $bdd->prepare($sql);
 if ($req->execute())
     echo "Items successfully inserted in Stickers table.\n<br>";
+
+
+$req = $bdd->prepare($sql);
+if ($req->execute())
+    echo "Stickers table successfully created.\n<br>";
+$req->closeCursor();
+$sql = "INSERT INTO `users` (`idUsers`, `nameUsers`, `emailUsers`, `pwdUsers`, `actif`, `cle`, `img`, `bio`, `img_nbr`, `notif_com`, `notif_like`) VALUES
+(1, 'food', 'food@gmail.com', '$2y$10$Ozs2eZzs7wWTGTH4ncmYBuRJ2wwMz.Q9Pr.rpll6YQdY4YKupbaqq', b'1', '2c9e47efa9f1b5d75c5164768cc55da6', './profile_pics/default_profile.jpg', NULL, 9, b'1', b'1'),
+(2, 'voyage', 'voyage@gmail.com', '$2y$10$JBwEq40zPbCF1oQPRIeq.OLBcAWyWJop48dgC5T6TkGpi1.FCvOne', b'1', '7cd1d1319a47a92981a057bc638d18c5', './profile_pics/default_profile.jpg', NULL, 9, b'1', b'1'),
+(3, 'voiture', 'voiture@gmail.com', '$2y$10$2G0vPtrXs1LGhkW8/dVHB.IKX0ukWja9C32lf6FxH7CWRqTFZ.OaS', b'1', '46f16a10178c4e234972add13d060148', './profile_pics/default_profile.jpg', NULL, 7, b'1', b'1');";
+$req = $bdd->prepare($sql);
+if ($req->execute())
+    echo "Users successfully created in users table.\n<br>"; 
+
+
+$sql = "INSERT INTO `pictures` (`id_img`, `id_user`, `img`, `date`, `like`, `comment`) VALUES
+(1, 1, './post_img/food_1.png', '2020-02-02 13:30:57', 0, 0),
+(3, 1, './post_img/food_3.png', '2020-02-02 13:34:29', 0, 0),
+(4, 1, './post_img/food_4.png', '2020-02-02 13:35:43', 0, 0),
+(7, 1, './post_img/food_7.png', '2020-02-02 13:38:23', 0, 0),
+(8, 1, './post_img/food_8.png', '2020-02-02 13:38:29', 0, 0),
+(10, 1, './post_img/food_10.png', '2020-02-02 13:41:07', 0, 0),
+(11, 1, './post_img/food_11.png', '2020-02-02 13:41:13', 0, 0),
+(12, 1, './post_img/food_12.png', '2020-02-02 13:41:20', 0, 0),
+(13, 1, './post_img/food_13.png', '2020-02-02 13:42:02', 0, 0),
+(14, 2, './post_img/voyage_14.png', '2020-02-02 13:44:27', 0, 0),
+(15, 2, './post_img/voyage_15.png', '2020-02-02 13:44:32', 0, 0),
+(16, 2, './post_img/voyage_16.png', '2020-02-02 13:44:37', 0, 0),
+(17, 2, './post_img/voyage_17.png', '2020-02-02 13:44:41', 0, 0),
+(18, 2, './post_img/voyage_18.png', '2020-02-02 13:44:46', 0, 0),
+(19, 2, './post_img/voyage_19.png', '2020-02-02 13:44:53', 0, 0),
+(20, 2, './post_img/voyage_20.png', '2020-02-02 13:44:57', 0, 0),
+(21, 2, './post_img/voyage_21.png', '2020-02-02 13:45:04', 0, 0),
+(22, 2, './post_img/voyage_22.png', '2020-02-02 13:45:08', 0, 0),
+(23, 3, './post_img/voiture_23.png', '2020-02-02 13:48:43', 0, 0),
+(24, 3, './post_img/voiture_24.png', '2020-02-02 13:48:48', 0, 0),
+(25, 3, './post_img/voiture_25.png', '2020-02-02 13:48:52', 0, 0),
+(26, 3, './post_img/voiture_26.png', '2020-02-02 13:48:56', 0, 0),
+(27, 3, './post_img/voiture_27.png', '2020-02-02 13:49:02', 0, 0),
+(28, 3, './post_img/voiture_28.png', '2020-02-02 13:49:06', 0, 0),
+(29, 3, './post_img/voiture_29.png', '2020-02-02 13:49:11', 0, 0);";
+$req = $bdd->prepare($sql);
+if ($req->execute())
+echo "pictures successfully inserted in Pictures table.\n<br>";
 ?>
