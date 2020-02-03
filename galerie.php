@@ -34,14 +34,20 @@ $depart = ($pagecourante - 1) * $imgParPage;
 	$req->execute();
 	while ($row = $req->fetch())
 		{
+			$likes = $row['like'];
+			$coms = $row['comment'];
 			?>
             	<div class="col-4" style="padding: 0.5% 1% 0.5% 1%;">
 					<a href="photo.php?id_img=<?php echo $row['id_img'] ?>&page=<?php echo $pagecourante ?>">
-						<img src="<?php echo $row['img'] ?>" alt="<?php echo $row['id_img'] ?>" id="modalimg" name="id_img" class="modalimg">				
+						<img src="<?php echo $row['img'] ?>" alt="<?php echo $row['id_img'] ?>" id="modalimg" name="id_img" class="modalimg">
+							<h5 class="centered"><img src="icones/heart.svg" width=25> <?php echo $likes ?> <img src="icones/comment.svg" width=25> <?php echo $coms ?></h5>
+						
+
+
+
+
 					</a>
 				</div>
-				
-
 		<?php
 		}?>
 				</div>
@@ -70,16 +76,10 @@ $depart = ($pagecourante - 1) * $imgParPage;
 	?>
   </ul>
 </nav>
-
-
-
 </div>
 </div>
 
 <script src="js/script.js?version=55">
-
-
-
 </script>
 
 

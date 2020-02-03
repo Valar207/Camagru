@@ -108,18 +108,16 @@ if ($req->execute())
     echo "Items successfully inserted in Stickers table.\n<br>";
 
 
-$req = $bdd->prepare($sql);
-if ($req->execute())
-    echo "Stickers table successfully created.\n<br>";
 $req->closeCursor();
 $sql = "INSERT INTO `users` (`idUsers`, `nameUsers`, `emailUsers`, `pwdUsers`, `actif`, `cle`, `img`, `bio`, `img_nbr`, `notif_com`, `notif_like`) VALUES
-(1, 'food', 'food@gmail.com', '$2y$10$Ozs2eZzs7wWTGTH4ncmYBuRJ2wwMz.Q9Pr.rpll6YQdY4YKupbaqq', b'1', '2c9e47efa9f1b5d75c5164768cc55da6', './profile_pics/default_profile.jpg', NULL, 9, b'1', b'1'),
-(2, 'voyage', 'voyage@gmail.com', '$2y$10$JBwEq40zPbCF1oQPRIeq.OLBcAWyWJop48dgC5T6TkGpi1.FCvOne', b'1', '7cd1d1319a47a92981a057bc638d18c5', './profile_pics/default_profile.jpg', NULL, 9, b'1', b'1'),
-(3, 'voiture', 'voiture@gmail.com', '$2y$10$2G0vPtrXs1LGhkW8/dVHB.IKX0ukWja9C32lf6FxH7CWRqTFZ.OaS', b'1', '46f16a10178c4e234972add13d060148', './profile_pics/default_profile.jpg', NULL, 7, b'1', b'1');";
+(1, 'food', 'food@gmail.com', '$2y$10.Q9Pr.rpll6YQdY4YKupbaqq', b'1', '2c9e47efa9f1b5d75c5164768cc55da6', './profile_pics/1.png', NULL, 9, b'1', b'1'),
+(2, 'voyage', 'voyage@gmail.com', '$2y$10.OLBcAWyWJop48dgC5T6TkGpi1.FCvOne', b'1', '7cd1d1319a47a92981a057bc638d18c5', './profile_pics/2.png', NULL, 9, b'1', b'1'),
+(3, 'voiture', 'voiture@gmail.com', '$2y$10$2G0vPtrXs1LGhkW8/dVHB.IKX0ukWja9C32lf6FxH7CWRqTFZ.OaS', b'1', '46f16a10178c4e234972add13d060148', './profile_pics/3.png', NULL, 7, b'1', b'1');";
 $req = $bdd->prepare($sql);
 if ($req->execute())
     echo "Users successfully created in users table.\n<br>"; 
 
+    
 
 $sql = "INSERT INTO `pictures` (`id_img`, `id_user`, `img`, `date`, `like`, `comment`) VALUES
 (1, 1, './post_img/food_1.png', '2020-02-02 13:30:57', 0, 0),

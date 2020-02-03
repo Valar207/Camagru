@@ -23,10 +23,10 @@ if (isset($_SESSION['nameUsers']))
         <div class="col-md-8 nav-profil-right">
             <form action="./includes/profile_changepwd.inc.php" method="post" class="form-right">
             <div class="row" style="margin-bottom: 15px;">
-                    <div class="col-sm-4 text-right">
+                    <div class="col-sm-4 col-3 text-right">
                         <img src="<?php echo $_SESSION['img_p']; ?>" class="img-profil-edit" alt="...">
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 col-9">
                         <h1><?php echo $_SESSION['nameUsers']; ?></h1>
                     </div>
             </div>

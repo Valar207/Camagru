@@ -1,7 +1,7 @@
 
 body{
     background-color: #FAFAFA;
-    min-width: 350px;
+    min-width: 400px;
 }
 
 .green{
@@ -182,8 +182,8 @@ h6{
     border-radius: 10px;
     background-color: white;
     border: 1px solid #E6E6E6;
-    width: 900px;
-    margin-top: 100px;
+    max-width: 700px;
+    margin-top: 50px;
 }
 .nav-profil-left{
     border-radius: 10px;
@@ -290,31 +290,46 @@ video {
 .imginmodal{
     margin: 0;
 }
+.modalimg{
+    margin: 1%;
+    width: 100%;
+    max-height: 100%;
+}
+.modalimg:hover {
+    opacity:0.4;
+}
+.centered {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+a:hover > .centered{
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
 
 
 /*profil*/
 
 .profil{
     max-width: 935px;
-    margin-top: 59px;
+    margin-top: 50px;
 }
 
 .img-profil{
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 100px;
 
-}
-.modalimg{
-    margin: 1%;
-    width: 100%;
-    max-height: 100%;
+
 }
 .darken:hover{
     background-color:#000;
-}
-.modalimg:hover {
-    opacity:0.4;
 }
 .modifp{
     margin: auto;
@@ -323,11 +338,15 @@ video {
 .delpicbtn{
     margin: 10px;
 }
+.table td, .table th{
+    vertical-align: middle;
+}
 
 
 /*photo*/
 .comments{
-    height: 20em;
+    height: 18em;
+    /* border: solid black 1px; */
     overflow: overlay;
     margin-top: 20px;
 }
@@ -373,14 +392,20 @@ video {
 .img_modal{
     padding-left: 0px;
 }
-
+.like{
+    display: inline;
+}
 .like_on{
     border:none;
     box-shadow: none;
+    display: inline-block;
 }
 .user_img{
     width: 50px;
     margin-top: 15px;
+}
+.nb-like{
+    display: inline;
 }
 /* camera */
 
@@ -477,4 +502,7 @@ video {
 }
 .table td{
     border: none;
+}
+.pagination{
+    margin-top: 15px;
 }

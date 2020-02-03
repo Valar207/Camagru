@@ -60,10 +60,16 @@ $page =$_GET['page'];
                                     $name_user = $row['nameUsers'];
                                 }
                             ?>
-                            <tr class="">
-                                <td><img src="<?php echo $img_user;?>" class="user_img"></td>
-                                <td><h3 style="display:inline-block;"><?php echo $name_user;?></h3><td>
-                            </tr>
+                            <table class="table">
+                            <tbody>
+                                <tr >
+                                    <td class="text-center"><img src="<?php echo $img_user;?>" class="img-profil"></td>
+                                    <td class="text-left"><h3 style="display:inline-block;"><?php echo $name_user;?></h3><td>
+                                </tr>
+                            </tbody>
+                            </table>
+
+                
                             
 
                     <div class="comments">
@@ -87,15 +93,7 @@ $page =$_GET['page'];
 
 
                     <div class="like">
-                        <form action="includes/add_comment.inc.php" method="post">
-                            <input type="hidden" value="<?php echo $id_img ?>" name="id_img">
-                            <input type="hidden" value="<?php echo $page ?>" name="page">
-                            <button class="like_on" type="submit"  name="like">
-                                <img style="width:20px;" src="icones/like.svg">
-                            </button>
-                        </form>
-                        
-                        <?php
+                    <?php
                             
                             $req = $bdd->prepare("SELECT `like` FROM pictures WHERE id_img=:id_img");
                             $req->execute(array('id_img' => $id_img));
@@ -103,7 +101,16 @@ $page =$_GET['page'];
                                 $nb_like = $row['like'];
                             }
                         ?>
-                        <span> <?php echo $nb_like ?></span>
+                        
+                        <form action="includes/add_comment.inc.php" method="post">
+                            <input type="hidden" value="<?php echo $id_img ?>" name="id_img">
+                            <input type="hidden" value="<?php echo $page ?>" name="page">
+                            <button class="like_on" type="submit"  name="like">
+                                <img style="width:20px;" src="icones/like.svg">   <?php echo $nb_like ?>
+                            </button>
+                        </form>
+                        
+
                     </div>
 
                     <hr>

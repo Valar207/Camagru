@@ -9,12 +9,16 @@ $req->execute(array('id' => $id));
 $imgtot = $req->rowCount();
 $pagestot = ceil($imgtot / $imgParPage);
 
+if ($pagestot == 0)
+	$pagestot = 1;
+
 if (isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] <= $pagestot){
 	$_GET['page'] = intval($_GET['page']);
 	$pagecourante = $_GET['page'];
 }
-else
+else{
 	$pagecourante = 1;
+}
 $depart = ($pagecourante - 1) * $imgParPage;
 
 /*count number of img for current user*/
@@ -41,7 +45,7 @@ $comments = $req->rowCount();
         <table class="table">
         <tbody>
             <tr class="text-center">
-                <td class="text-right" rowspan="2">
+                <td class="text-right">
                     <img src="<?php echo $_SESSION['img_p']; ?>" class="img-profil">
                 </td>
                 <td>
@@ -95,21 +99,23 @@ $comments = $req->rowCount();
 <!-- Pagination -->
 <nav aria-label="Page navigation" class="center">
   <ul class="pagination justify-content-center ">
-	<?php 
+	<?php
 		if ($pagecourante == 1)
 			echo '<li class="page-item disabled"><a class="page-link"><<</a></li>';
 		else
-			echo '<li class="page-item"><a class="page-link" href="profile.php?page='.($pagecourante - 1).'"><<</a></li>';
+			echo '<li class="page-item"><a class="page-link" href="galerie.php?page='.($pagecourante - 1).'"><<</a></li>';
 		for($i=1; $i<=$pagestot;$i++){
 			if($i == $pagecourante)
 				echo '<li class="page-item active"><a class="page-link">'.$i.'</a></li>';
 			else
-				echo '<li class="page-item"><a class="page-link" href="profile.php?page='.$i.'">'.$i.'</a></li>';
+				echo '<li class="page-item"><a class="page-link" href="galerie.php?page='.$i.'">'.$i.'</a></li>';
 		}
 		if ($pagecourante == $pagestot)
 			echo '<li class="page-item disabled"><a class="page-link">>></a></li>';
 		else
-			echo '<li class="page-item"><a class="page-link" href="profile.php?page='.($pagecourante + 1).'">>></a></li>';
+		{
+			echo '<li class="page-item"><a class="page-link" href="galerie.php?page='.($pagecourante + 1).'">>></a></li>';
+		}
 	?>
   </ul>
 </nav>
