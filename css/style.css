@@ -1,7 +1,8 @@
 
 body{
     background-color: #FAFAFA;
-    min-width: 400px;
+    /* width: 100%; */
+    /* min-width: 400px; */
 }
 
 .green{
@@ -17,6 +18,7 @@ input[type="text"], input[type="password"],  input[type="email"]{
 
 .container .header{
     max-width: 935px;
+    width: 100%;
 }
 
 /*header*/
@@ -26,6 +28,7 @@ input[type="text"], input[type="password"],  input[type="email"]{
 }
 .header{
     max-width: 935px;
+    /* min-width: 480px; */
 }
 .camagruh{
     font-family: billabong;
@@ -182,7 +185,8 @@ h6{
     border-radius: 10px;
     background-color: white;
     border: 1px solid #E6E6E6;
-    max-width: 700px;
+    /* max-width: 700px; */
+    width: 85%;
     margin-top: 50px;
 }
 .nav-profil-left{
@@ -235,12 +239,11 @@ h6{
 /*galerie*/
 
 video {
-    -webkit-transform: scaleX(-1);
+    /* -webkit-transform: scaleX(-1); */
     transform: scaleX(-1);
-    width: 480px;
-    height: 480px;
-    object-fit: none;
-    position: relative;
+    width: 100%;
+    /* object-fit: none; */
+    /* position: relative; */
   }
 
 .galerie{
@@ -324,7 +327,7 @@ a:hover > .centered{
 
 .img-profil{
     border-radius: 50%;
-    width: 100px;
+    width: 75px;
 
 
 }
@@ -410,26 +413,34 @@ a:hover > .centered{
 /* camera */
 
 .video{
-    /* width: 200px; */
+    width: 100%;
+    /* position: relative; */
 }
 .overlay{
+    /* position: inherit; */
+    /* position: relative; */
+    width: 100%;
+    top:0;
+    left:0;
     position: absolute;
     z-index: 10;
+    padding: 20px;
 }
+
 .content-stickers{
-    height: 581px;
+    height: 620px;
     background-color: white;
     border: solid 1px #E6E6E6;
     border-radius: 10px;
+    padding: 20px;
+    /* margin-top: 20px; */
 }
 .stickers{
-    height: 485px;
+    height: 90%;
     overflow: auto;
     border-radius: 10px;
     background-color: #FAFAFA;
     border: solid 1px #E6E6E6;
-
-    margin-top: 20px;
 }
 .stickers::-webkit-scrollbar {
     width: 12px;
@@ -465,9 +476,9 @@ a:hover > .centered{
     background-color: white;
     border: solid 1px #E6E6E6;
     border-radius: 10px;
-    padding: 20px 0 5px 0;
-    min-width: 520px;
-    margin-bottom: 20px;
+    position: relative;
+    padding: 20px;
+    /* margin-bottom: 20px; */
 }
 .disp-shots{
     min-height: 300px;
@@ -476,6 +487,8 @@ a:hover > .centered{
     background-color: white;
     border: solid 1px #E6E6E6;
     border-radius: 10px;
+    padding: 10px;
+    margin: 10px 10px 20px 10px;
 }
 .disp-shots::-webkit-scrollbar {
     width: 12px;
@@ -505,4 +518,7 @@ a:hover > .centered{
 }
 .pagination{
     margin-top: 15px;
+}
+.col-11{
+    margin: 10px;
 }

@@ -24,16 +24,16 @@ if (isset($_GET['error']))
     </div>';
 }
 ?>
-        <div class="row justify-content-between">
-            <div class="camera col-md-7">
+        <div class="row justify-content-around">
+            <div class="camera col-md-7 col-11">
                 <form action="includes/camera.inc.php" method="post" enctype="multipart/form-data">
-                    <img draggable="false" class="overlay" name="sticker" id="overlay" src="">
                     <input  value="" type="hidden"  id="sticker_v" name="sticker_v">
                     <video class="video" id="sourcevid"></video>
+                    <img draggable="false" class="overlay" name="sticker" id="overlay" src="">
                     <canvas id="cvs" height='480' width='480' style="display:none"></canvas><br>
 
                     <div class="row">
-                        <div class="col-md-6 ">
+                        <div class="col-md-6">
                             <button class="btn btn-primary shot" name="camupload" id='tar' onclick='capture()'></button>
                         </div>
                         <div class="col-md-6">
@@ -45,7 +45,7 @@ if (isset($_GET['error']))
                 </form>
             </div>
 
-            <div class="col-md-4 content-stickers">
+            <div class="col-md-4 col-11 content-stickers">
                 <div class="stickers">
                     <?php
                         $req = $bdd->prepare("SELECT * FROM stickers");
