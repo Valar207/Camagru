@@ -82,9 +82,15 @@ $comments = $req->rowCount();
         $req->execute(array('id' => $id));
         while ($row = $req->fetch())
         {
+            $likes = $row['like'];
+			$coms = $row['comment'];
             ?>
             <div class="col-4 text-center" style="padding: 0.5% 1% 0.5% 1%;">
-                <img width=100% src='<?php echo $row['img'] ?>' class="modalimg">
+			<a href="photo.php?id_img=<?php echo $row['id_img'] ?>&page=<?php echo $pagecourante ?>&profil=yes">
+                            <img width=100% src='<?php echo $row['img'] ?>' class="modalimg">
+							<h5 class="centeredd"><img src="icones/heart.svg" width=25> <?php echo $likes ?> <img src="icones/comment.svg" width=25> <?php echo $coms ?></h5>
+            </a>
+
                 <br>
                 <input type="hidden" name="pagecourante" value='<?php echo $pagecourante ?>'>
                 <input type="hidden" name="id_img" value="<?php echo $row['id_img'] ?>">
@@ -103,18 +109,18 @@ $comments = $req->rowCount();
 		if ($pagecourante == 1)
 			echo '<li class="page-item disabled"><a class="page-link"><<</a></li>';
 		else
-			echo '<li class="page-item"><a class="page-link" href="galerie.php?page='.($pagecourante - 1).'"><<</a></li>';
+			echo '<li class="page-item"><a class="page-link" href="profile.php?page='.($pagecourante - 1).'"><<</a></li>';
 		for($i=1; $i<=$pagestot;$i++){
 			if($i == $pagecourante)
 				echo '<li class="page-item active"><a class="page-link">'.$i.'</a></li>';
 			else
-				echo '<li class="page-item"><a class="page-link" href="galerie.php?page='.$i.'">'.$i.'</a></li>';
+				echo '<li class="page-item"><a class="page-link" href="profile.php?page='.$i.'">'.$i.'</a></li>';
 		}
 		if ($pagecourante == $pagestot)
 			echo '<li class="page-item disabled"><a class="page-link">>></a></li>';
 		else
 		{
-			echo '<li class="page-item"><a class="page-link" href="galerie.php?page='.($pagecourante + 1).'">>></a></li>';
+			echo '<li class="page-item"><a class="page-link" href="profile.php?page='.($pagecourante + 1).'">>></a></li>';
 		}
 	?>
   </ul>

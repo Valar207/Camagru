@@ -2,7 +2,7 @@
 body{
     background-color: #FAFAFA;
     /* width: 100%; */
-    /* min-width: 400px; */
+    min-width: 400px;
 }
 
 .green{
@@ -185,7 +185,7 @@ h6{
     border-radius: 10px;
     background-color: white;
     border: 1px solid #E6E6E6;
-    /* max-width: 700px; */
+    max-width: 700px;
     width: 85%;
     margin-top: 50px;
 }
@@ -196,7 +196,7 @@ h6{
     padding: 0px;
 }
 .nav-profil-right{
-    border-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
     background-color: white;
     border-left: 1px solid #E6E6E6;
 }
@@ -277,10 +277,13 @@ video {
 }
 .close{
     color: #ccc;
-    margin-right: 5px;
+    /* margin-right: -25px; */
+    padding: 10px;
     font-size: 30px;
-    position: relative;
+    /* position: relative; */
+
     z-index: 100;
+    background-color: red;
 }
 .close:hover, .close:focus{
     color: black;
@@ -314,6 +317,22 @@ a:hover > .centered{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: black;
+}
+
+.centeredd {
+    position: absolute;
+    display: none;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+a:hover > .centeredd{
+    position: absolute;
+    display: block;
+    top: 40%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
     color: black;
 }
 
@@ -410,6 +429,9 @@ a:hover > .centered{
 .nb-like{
     display: inline;
 }
+.right-col{
+    padding: 20px;
+}
 /* camera */
 
 .video{
@@ -417,14 +439,20 @@ a:hover > .centered{
     /* position: relative; */
 }
 .overlay{
-    /* position: inherit; */
-    /* position: relative; */
     width: 100%;
     top:0;
     left:0;
     position: absolute;
     z-index: 10;
     padding: 20px;
+}
+.overlay-upload{
+    width: 100%;
+    z-index: 1;
+    /* padding: 20px; */
+}
+.img-upload{
+    width: 100%;
 }
 
 .content-stickers{
@@ -476,8 +504,10 @@ a:hover > .centered{
     background-color: white;
     border: solid 1px #E6E6E6;
     border-radius: 10px;
-    position: relative;
+    min-height: 200px;
+    /* position: relative; */
     padding: 20px;
+    /* max-height: 620px; */
     /* margin-bottom: 20px; */
 }
 .disp-shots{
@@ -521,4 +551,24 @@ a:hover > .centered{
 }
 .col-11{
     margin: 10px;
+}
+.upload-btn{
+    margin: auto;
+    /* margin-top: 20px; */
+    /* margin-top: 15px; */
+    color: white;
+    border-radius: 500px;
+    width: 80px;
+    background-color: rgba(0, 123, 255, 1);
+}
+.upload-btn:hover{
+    background-color: rgb(29, 112, 202);
+    cursor: pointer;
+}
+.shots{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.stick{
+    margin-top: 15px;
 }

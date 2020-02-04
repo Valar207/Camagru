@@ -14,13 +14,25 @@ $page =$_GET['page'];
     
 <div class="container-fluid margin">
     <div class="container fakemod">
+
+    <?php if(isset($_GET['profil']) && $_GET['profil'] == 'yes'){
+        
+    ?>
+            <a href="profile.php?page=<?php echo $_GET['page'] ?>">
+                <p class="close">&times;</p>
+            </a>
+
+    <?php } 
+    else{
+        ?>
     <a href="galerie.php?page=<?php echo $_GET['page'] ?>">
-    <span class="close">&times;</span>
+        <p class="close">&times;</p>
     </a>
+    <?php } ?>
 
         
         <div class="row">
-            <div class="col-12 col-md-6 img_modal">
+            <div class="col-12 col-md-12 col-lg-8 img_modal">
                 <?php
                     if (isset($_GET['a'])){
                         if ($_GET['a'] == 0){
@@ -50,7 +62,7 @@ $page =$_GET['page'];
             <?php
                 if (isset($_SESSION['nameUsers'])){?>
 
-                <div class="col-12 col-md-6 right-col">
+                <div class="col-12 col-md-12 col-lg-4 right-col">
                             <?php
                                 $req = $bdd->prepare("SELECT users.img, nameUsers FROM users INNER JOIN pictures ON users.idUsers = pictures.id_user
                                                         WHERE pictures.id_img = :id_img");

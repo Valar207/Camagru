@@ -14,7 +14,7 @@ if(isset($_POST['delstick']))
 
 
 
-if(isset($_POST['submit2']))
+if(isset($_FILES['file2']))
 {
     $file = $_FILES['file2'];
     $filename = $_FILES['file2']['name'];

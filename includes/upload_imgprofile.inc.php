@@ -3,7 +3,7 @@ session_start();
 require "../config/database_connect.php";
 $id = $_SESSION['id'];
 
-if (isset($_POST['submit']))
+if (isset($_FILES['file']))
 {
     $file = $_FILES['file'];
     $filename = $_FILES['file']['name'];

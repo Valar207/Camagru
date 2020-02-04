@@ -26,21 +26,50 @@ if (isset($_GET['error']))
 ?>
         <div class="row justify-content-around">
             <div class="camera col-md-7 col-11">
-                <form action="includes/camera.inc.php" method="post" enctype="multipart/form-data">
+                <form class="form-btn" action="includes/camera.inc.php" method="post" enctype="multipart/form-data">
                     <input  value="" type="hidden"  id="sticker_v" name="sticker_v">
+                    
+                    
+                    
+                    
+                    
                     <video class="video" id="sourcevid"></video>
-                    <img draggable="false" class="overlay" name="sticker" id="overlay" src="">
-                    <canvas id="cvs" height='480' width='480' style="display:none"></canvas><br>
 
-                    <div class="row">
-                        <div class="col-md-6">
+
+
+
+                    <img draggable="false" id="upload-img" class="overlay-upload" width="100%">
+
+
+                    <img draggable="false" class="overlay" name="sticker" id="overlay" src="">
+
+
+
+                    <canvas id="cvs" height='480' width='480' style="display:none;"></canvas><br>
+
+                    <div class="row shots" >
+
+
+
+
+                        <div class="col-md-12">
+                            <!-- BOUTTON CAPTURE VIDEO -->
                             <button class="btn btn-primary shot" name="camupload" id='tar' onclick='capture()'></button>
                         </div>
-                        <div class="col-md-6">
-                            <label class="modifpdp" for="upload" style="display:block; font-size:15px">Upload photo</label>
-                            <input id="upload" type="file" name="file" accept="image/*" style="display:none;">
-                            <button class="btn btn-primary" type="submit" name="submit">Valider</button>  
+
+
+                        <div class="col-md-6 col-6" align="center">
+                            <!-- BOUTTON CAPTURE UPLOADED IMAGE -->
+                            <button class="btn btn-primary shot" name="imgupload" id='cap' onclick='capture_upload()' style="display:none;"></button>
                         </div>
+                        <div class="col-md-6 col-6" align="center">
+                            <label class="upload-btn" for="upload" name="file" id="upload_photo" style="display:none; font-size:15px">Upload photo</label>
+                            <input id="upload" type="file" name="file" accept="image/*" onchange="loadFile(event)" style="display:none;">
+                        </div>
+
+
+
+
                     </div>
                 </form>
             </div>
@@ -62,9 +91,8 @@ if (isset($_GET['error']))
                     ?>
                 </div>
                         <form action="includes/sticker.inc.php" method="post" enctype="multipart/form-data">
-                            <label class="modifpdp" for="upload2" style="display:block; font-size:15px">Upload sticker</label>
-                            <input id="upload2" type="file" name="file2" accept="image/*" style="display:none;">
-                            <button class="btn btn-primary" type="submit" name="submit2">Valider</button>  
+                            <label class="upload-btn stick" for="upload2" style="display:block; font-size:15px">Upload sticker</label>
+                            <input id="upload2" type="file" name="file2" accept="image/*" onchange="submit()" style="display:none;">
                         </form>
             </div>
         </div>
@@ -87,12 +115,15 @@ if (isset($_GET['error']))
         
 
     </div>
-
-
 </body>
 
 <script>
     window.onload = OpenCam;
+
+    var loadFile = function(event) {
+	var image = document.getElementById('upload-img');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
 </script>
 
 <?php }

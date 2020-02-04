@@ -5,7 +5,12 @@ function OpenCam() {
 		video.onloadedmetadata = function(e) {
 			video.play();
 		};
-	}).catch(function(err) { console.log(err.name + ": " + err.message); });
+	}).catch(function(err) {
+		cap.style.display = 'block';
+		tar.style.display = 'none';
+		sourcevid.style.display = 'none';
+		upload_photo.style.display = 'block';
+	});
 }
 function capture(){
 	var vivi = document.getElementById('sourcevid');
@@ -13,6 +18,13 @@ function capture(){
 	canvas1.drawImage(vivi, 0,0, 480, 480);
 	var base64=document.getElementById('cvs').toDataURL("image/*");	//l'image au format base 64
 	document.getElementById('tar').value=base64;
+}
+function capture_upload(){
+	var vivi = document.getElementById('upload-img');
+	var canvas1 = document.getElementById('cvs').getContext('2d');
+	canvas1.drawImage(vivi, 0,0, 480, 480);
+	var base64=document.getElementById('cvs').toDataURL("image/*");	//l'image au format base 64
+	document.getElementById('cap').value=base64;
 }	
 
 function changeSticker(src){
@@ -23,6 +35,8 @@ function changeSticker(src){
 	sticker_v.value = src;
 	console.log(sticker_v.value);
 }
+
+
 
 // var modal = document.getElementById('mymodal');
 // var modalImg = document.getElementById("imgmodal");
