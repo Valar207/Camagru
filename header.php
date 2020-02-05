@@ -10,7 +10,7 @@ require "config/database_connect.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Camagru</title>
-    <link rel="shortcut icon" href="icones/photo.png" />
+    <link rel="shortcut icon" href="icones/photo.png"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css?<?php echo time(); ?>">
     <script type="text/javascript" src="js/script.js?<?php echo time(); ?>"></script>
