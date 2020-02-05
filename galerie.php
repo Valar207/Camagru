@@ -2,6 +2,8 @@
 require "header.php";
 require "./config/database_connect.php";
 
+
+
 $imgParPage = 9;
 $req = $bdd->prepare("SELECT id_img FROM pictures");
 $req->execute();
@@ -11,7 +13,7 @@ $pagestot = ceil($imgtot / $imgParPage);
 if ($pagestot == 0)
 	$pagestot = 1;
 
-if (isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] <= $pagestot){
+if (isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] <= $pagestot && is_numeric($_GET['page'])){
 	$_GET['page'] = intval($_GET['page']);
 	$pagecourante = $_GET['page'];
 }
@@ -19,6 +21,8 @@ else{
 	$pagecourante = 1;
 }
 $depart = ($pagecourante - 1) * $imgParPage;
+
+
 ?>
 
 <!-- display gallerie -->

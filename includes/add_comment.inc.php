@@ -6,7 +6,7 @@ require "./mail_functions.inc.php";
 
 
 if (isset($_POST['com'])){
-    $com = $_POST['com'];
+    $com = htmlspecialchars($_POST['com']);
     $id_user = $_SESSION['id'];
     $id_img = $_POST['id_img'];
     $page = $_POST['page'];

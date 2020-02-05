@@ -5,6 +5,18 @@ require "./config/database_connect.php";
 $id_img = $_GET['id_img'];
 $page =$_GET['page'];
 
+$req = $bdd->prepare("SELECT * FROM pictures WHERE id_img = :id_img");
+$req->execute(array('id_img' => $id_img));
+if ($req->rowCount() == 0){
+    echo 'page non existante';
+    exit;
+}
+
+
+if(!is_numeric($id_img) || !is_numeric($page)){
+    echo 'page non existante';
+    exit;
+}
 ?>
 
 <!DOCTYPE html>

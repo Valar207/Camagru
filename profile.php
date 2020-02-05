@@ -12,7 +12,7 @@ $pagestot = ceil($imgtot / $imgParPage);
 if ($pagestot == 0)
 	$pagestot = 1;
 
-if (isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] <= $pagestot){
+if (isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] <= $pagestot && is_numeric($_GET['page'])){
 	$_GET['page'] = intval($_GET['page']);
 	$pagecourante = $_GET['page'];
 }
