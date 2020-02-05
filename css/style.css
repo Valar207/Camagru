@@ -52,10 +52,18 @@ input[type="text"], input[type="password"],  input[type="email"]{
 
 .nav-left{
     color: black;
-
     white-space: nowrap;
 }
 .nav-left:hover{
+    color: black;
+    text-decoration: none;
+}
+.nav-left-log{
+    color: black;
+    border-right: solid 1px #DBDBDB;
+    white-space: nowrap;
+}
+.nav-left-log:hover{
     color: black;
     text-decoration: none;
 }

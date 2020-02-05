@@ -72,7 +72,7 @@ if (isset($_SESSION['nameUsers']))
                         <label class="col-form-label">Nouveau mot de passe</label>
                     </div>
                     <div class="col-sm-6">
-                        <input type="password" class="form-control" name="newpwd" minlength='8'>
+                        <input type="password" required="" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" class="form-control" name="newpwd" minlength='8'>
                     </div>
                 </div>
                 
@@ -83,7 +83,7 @@ if (isset($_SESSION['nameUsers']))
                         <label class="col-form-label">Confirmer le nouveau mot de passe</label>
                     </div>
                     <div class="col-sm-6">
-                        <input style="height:60px;" type="password" class="form-control" name="newpwd2" minlength='8'>                    
+                        <input style="height:60px;" required="" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" type="password" class="form-control" name="newpwd2" minlength='8'>                    
                     </div>
                 </div>
 

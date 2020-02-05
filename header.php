@@ -64,7 +64,7 @@ require "config/database_connect.php";
                             ?>
                         
                         <div class="camagruh col-md-6 col-sm-6 col-3">
-                            <a class="nav-left" href="./galerie.php">Camagru</a>
+                            <a class="nav-left-log" href="./galerie.php">Camagru &nbsp</a>&nbsp
                             <a href="camera.php"><img src="icones/photo.png" alt="" class="photo-ico"></a>
                         </div>         
                         

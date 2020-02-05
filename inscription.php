@@ -2,6 +2,8 @@
 <?php
 require "header.php";
 
+if (isset($_SESSION['nameUsers']))
+    header('Location:galerie.php');
 ?>
 
 <div class="login-form">
