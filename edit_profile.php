@@ -28,7 +28,6 @@ if (!isset($_SESSION['bio']))
                         <form action="includes/upload_imgprofile.inc.php" method="post" enctype="multipart/form-data">
                             <label class="upload-btn" for="upload" style="display:inline-block; font-size:15px; width:160px;">Modifier la photo de profil</label>
                             <input id="upload" type="file" name="file" accept="image/*" onChange="submit()" style="display:none;">
-                            <!-- <button class="btn btn-primary upload-img" type="submit" name="submit" style="display:block">Valider</button>   -->
                         </form>
 
                     </div> 

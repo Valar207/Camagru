@@ -17,6 +17,8 @@ if(isset($_FILES['file']) && !isset($_POST['camupload']) && !isset($_POST['imgup
     $fileactualext = strtolower(end($fileext));
     $allowed = array('jpg', 'jpeg', 'png');
 
+    print_r(getimagesize($file));exit;
+
     if (in_array($fileactualext, $allowed))
     {
         if ($fileerror === 0)
@@ -44,9 +46,6 @@ if(isset($_FILES['file']) && !isset($_POST['camupload']) && !isset($_POST['imgup
                 $req = $bdd->prepare("UPDATE pictures SET img = :img WHERE id_img = :id_img");
                 $req->execute(array('img' => $img, 'id_img' => $id_img));
 
-                // echo $filetmpname;
-                // echo '<br>';
-                // echo $img;exit;
                 move_uploaded_file($filetmpname, '.'.$img);
                 header("Location: ../camera.php");
             }

@@ -7,6 +7,13 @@ require "./header.php";
 <h1 class="camagru">Camagru</h1>
     <form action="./includes/changepwd.inc.php" method="post">
 <?PHP 
+    if (!isset($_GET['correct'])){
+        if ($_GET['correct'] !== 'yes')
+            header('Location:index.php');
+        else
+            header('Location:index.php');
+    }
+
     if (isset($_GET['error']))
     {
         if ($_GET['error'] == 'emptyfield')
@@ -20,9 +27,10 @@ require "./header.php";
     }
 
 ?>
-        <div class="form-group">
-            <input type="password" style="margin-bottom:5px;" name="pwd1" placeholder="Nouveau mot de passe" minlength="8" class="form-control">
-            <input type="password" name="pwd2" placeholder="Confirmer mot de passe" minlength="8" class="form-control">
+        <div class="form-group text-center">
+            <input type="password" required="" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" style="margin-bottom:5px;" name="pwd1" placeholder="Nouveau mot de passe" minlength="8" class="form-control">
+            <input type="password" required="" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" name="pwd2" placeholder="Confirmer mot de passe" minlength="8" class="form-control">
+            <span class="pwd-check">Votre mot de passe doit contenir minimum 8 caractères, au moins un chiffre, une minuscule et une majuscule.</span>        
         </div>
         <button class="btn btn-primary btn-block" type="submit" name="reset_pwd">Modifier</button>
         

@@ -44,7 +44,7 @@ function    sendLinkNewPwd($mail, $checkcle)
     
                 Pour changer votre mot de passe, veuillez cliquer sur le lien ci-dessous <br>
         
-                <a target="_blank" href="http://localhost:8082/camagru/includes/checktoken.inc.php?username='.urlencode($mail).'&cle='.urlencode($checkcle).'">Réinitialiser mot de passe</a><br>
+                <a target="_blank" href="http://localhost:8082/camagru/includes/checktoken.inc.php?correct=yes&username='.urlencode($mail).'&cle='.urlencode($checkcle).'">Réinitialiser mot de passe</a><br>
                 
                 --------------- <br>
                 Ceci est un mail automatique, Merci de ne pas y répondre.
