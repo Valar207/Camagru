@@ -46,7 +46,7 @@
             </div>';
             if ($_GET['error'] == 'wrongpwd')
             echo '<div class="alert alert-danger" role="alert">
-            Mauvais mot de passe
+            Mauvais email ou mot de passe
             </div>';
             if ($_GET['error'] == 'noactif')
             echo '<div class="alert alert-danger" role="alert">
@@ -54,7 +54,7 @@
             </div>';
             if ($_GET['error'] == 'nouser')
             echo '<div class="alert alert-danger" role="alert">
-            Cet utilisateur n\'existe pas
+            Mauvais email ou mot de passe
             </div>';
         }
         if (isset($_GET['changepwd']))

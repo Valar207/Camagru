@@ -2,7 +2,7 @@
 body{
     background-color: #FAFAFA;
     /* width: 100%; */
-    min-width: 400px;
+    min-width: 360px;
     height: 100%;
 }
 
@@ -60,7 +60,7 @@ input[type="text"], input[type="password"],  input[type="email"]{
 }
 .nav-left-log{
     color: black;
-    border-right: solid 1px #DBDBDB;
+    border-right: solid 2px #DBDBDB;
     white-space: nowrap;
 }
 .nav-left-log:hover{
@@ -457,6 +457,7 @@ a:hover > .centeredd{
 }
 .like_on{
     border:none;
+    background-color: white;
     box-shadow: none;
     display: inline-block;
 }
