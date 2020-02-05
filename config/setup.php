@@ -125,7 +125,6 @@ $sql = "INSERT INTO `pictures` (`id_img`, `id_user`, `img`, `date`, `like`, `com
 (7, 1, './post_img/food_7.png', '2020-02-02 13:38:23', 0, 0),
 (10, 1, './post_img/food_10.png', '2020-02-02 13:41:07', 0, 0),
 (11, 1, './post_img/food_11.png', '2020-02-02 13:41:13', 0, 0),
-(12, 1, './post_img/food_12.png', '2020-02-02 13:41:20', 0, 0),
 (13, 1, './post_img/food_13.png', '2020-02-02 13:42:02', 0, 0),
 (14, 2, './post_img/voyage_14.png', '2020-02-02 13:44:27', 0, 0),
 (15, 2, './post_img/voyage_15.png', '2020-02-02 13:44:32', 0, 0),

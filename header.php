@@ -84,16 +84,17 @@ require "config/database_connect.php";
                                         <li class="nav-item notif-on">
 
                                         <?php
-                                            $req = $bdd->prepare("SELECT * FROM likes WHERE id_user != :id AND active = 1");
-                                            $req->execute(array('id' => $_SESSION['id']));
-                                            $nb_likes = $req->rowCount();
-                                            $req = $bdd->prepare("SELECT * FROM comments WHERE id_user != :id AND active = 1");
-                                            $req->execute(array('id' => $_SESSION['id']));
-                                            $nb_com = $req->rowCount();
-                                            $nb_notif = $nb_com + $nb_likes;
+                                            // $req = $bdd->prepare("SELECT * FROM likes WHERE id_user != :id AND active = 1");
+                                            // $req->execute(array('id' => $_SESSION['id']));
+                                            // $nb_likes = $req->rowCount();
+                                            // $req = $bdd->prepare("SELECT * FROM comments WHERE id_user != :id AND active = 1");
+                                            // $req->execute(array('id' => $_SESSION['id']));
+                                            // $nb_com = $req->rowCount();
+                                            // $nb_notif = $nb_com + $nb_likes;
 
-                                            if ($nb_notif > 0){
-                                                echo '<span class="pop-notif text-center">'.$nb_notif.'</span>';
+                                            $sum_notif = $act_com+$act_like;
+                                            if ($sum_notif > 0){
+                                                echo '<span class="pop-notif text-center">'.$sum_notif.'</span>';
                                             }
                                         ?>
                                         
