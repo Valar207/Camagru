@@ -77,7 +77,9 @@ $depart = ($pagecourante - 1) * $imgParPage;
 <script src="js/script.js?version=55">
 </script>
 
-
+<footer class="whitefooter text-center">
+	Camagru 2020 @vrossi
+</footer>
 
 
 

@@ -71,6 +71,9 @@ if (isset($_SESSION['nameUsers']))
         </div>
     </div>
 </div>
+<footer class="whitefooter text-center">
+	Camagru 2020 @vrossi
+</footer>
 
 <?php }
 else{

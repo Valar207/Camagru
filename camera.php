@@ -28,30 +28,11 @@ if (isset($_GET['error']))
             <div class="camera col-md-7 col-11">
                 <form class="form-btn" action="includes/camera.inc.php" method="post" enctype="multipart/form-data">
                     <input  value="" type="hidden"  id="sticker_v" name="sticker_v">
-                    
-                    
-                    
-                    
-                    
                     <video class="video" id="sourcevid"></video>
-
-
-
-
                     <img draggable="false" id="upload-img" class="overlay-upload" width="100%">
-
-
                     <img draggable="false" class="overlay" name="sticker" id="overlay" src="">
-
-
-
                     <canvas id="cvs" height='480' width='480' style="display:none;"></canvas><br>
-
                     <div class="row shots" >
-
-
-
-
                         <div class="col-md-12">
                             <!-- BOUTTON CAPTURE VIDEO -->
                             <button class="btn btn-primary shot" name="camupload" id='tar' onclick='capture()'></button>
@@ -83,8 +64,8 @@ if (isset($_GET['error']))
                         { ?>
                         <form action="includes/sticker.inc.php" method="post">
                             <input type="hidden" name="sticker" value="<?php echo $row['sticker'] ?>">
-                            <button type="submit" name="delstick" value='<?php echo $row['sticker'] ?>' class="croix" >&times;</button>
-                            <img class="sticker" width=200px src='<?php echo $row['sticker'] ?>' onclick='changeSticker(this.src)'><br>
+                            <button type="submit" name="delstick" value='<?php echo $row['sticker'] ?>' class="croix col-1" >&times;</button>
+                            <img class="sticker col-10" width=200px src='<?php echo $row['sticker'] ?>' onclick='changeSticker(this.src)'><br>
                         </form>
 
                     <?php }
@@ -133,5 +114,7 @@ else{
 
 ?>
 
-
+<footer class="whitefooter text-center">
+	Camagru 2020 @vrossi
+</footer>
 

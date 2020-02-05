@@ -86,7 +86,9 @@
 Pas de compte ? <a href="inscription.php"> Inscrivez-vous</a>
 </div>
 
-
+<footer class="whitefooter text-center">
+	Camagru 2020 @vrossi
+</footer>
 
 
 

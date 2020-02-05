@@ -31,3 +31,6 @@ require "./header.php";
         <a href="index.php"><p class="back-to-log">Revenir à l'écran de connexion</p></a>
     </div>
 </div>
+<footer class="whitefooter text-center">
+	Camagru 2020 @vrossi
+</footer>

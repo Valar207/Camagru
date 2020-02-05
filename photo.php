@@ -45,7 +45,6 @@ $page =$_GET['page'];
                                                         $req->execute(array('id_img' => $id_img));
                                                         $req = $bdd->prepare("UPDATE likes SET active = 0 WHERE id_img = :id_img");
                                                         $req->execute(array('id_img' => $id_img));
-                                                        //header("Location: photo.php?id_img=$id_img&page=$page");
                                                 }
                         }
                     }
@@ -197,12 +196,5 @@ $page =$_GET['page'];
 
     </div>
 </div>
-
 </body>
-
-
-
-
-
 </html>
-

@@ -58,3 +58,6 @@ if (isset($_GET['error']))
 
 </div>
 
+<footer class="whitefooter text-center">
+	Camagru 2020 @vrossi
+</footer>

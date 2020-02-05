@@ -128,7 +128,13 @@ $comments = $req->rowCount();
 
 </div>
 
+
 <?php }
 else{
     header("Location: index.php");
 }
+?>
+
+<footer class="whitefooter text-center margin">
+	Camagru 2020 @vrossi
+</footer>

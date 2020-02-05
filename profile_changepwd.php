@@ -106,3 +106,6 @@ else{
 }
 
 ?>
+<footer class="whitefooter text-center">
+	Camagru 2020 @vrossi
+</footer>

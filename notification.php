@@ -80,6 +80,9 @@ $id = $_SESSION['id'];
         </div>
     </div>
 </div>
+<footer class="whitefooter text-center margin">
+	Camagru 2020 @vrossi
+</footer>
 
 <?php }
 else{
