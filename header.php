@@ -81,7 +81,25 @@ require "config/database_connect.php";
                                             <a class="" href="./galerie.php"><img src="icones/galerie.svg" class="galerie-ico"></a>
                                         </li>
                                         <li class="nav-item notif-on">
+
+                                        <?php
+                                            $req = $bdd->prepare("SELECT * FROM likes WHERE id_user != :id AND active = 1");
+                                            $req->execute(array('id' => $_SESSION['id']));
+                                            $nb_likes = $req->rowCount();
+                                            $req = $bdd->prepare("SELECT * FROM comments WHERE id_user != :id AND active = 1");
+                                            $req->execute(array('id' => $_SESSION['id']));
+                                            $nb_com = $req->rowCount();
+                                            $nb_notif = $nb_com + $nb_likes;
+
+                                            if ($nb_notif > 0){
+                                                echo '<span class="pop-notif text-center">'.$nb_notif.'</span>';
+                                            }
+                                        ?>
+                                        
+                                            
+
                                             <a class="" href="#"><img src="icones/notification.svg" class="notif-ico"></a>
+
                                             <?php
                                             if ($act_like > 0 || $act_com > 0)
                                                echo '<ul class="notifs">';
@@ -111,10 +129,11 @@ require "config/database_connect.php";
                                                         $id_img = $row['id_img'];
                                                         ?>
                                                         <li class="item notif"><a href="photo.php?id_img= <?php echo $id_img ?> &page=1&a=0"> <?php echo $username ?> a aimé votre photo</a></li>
-                                                    <?php }
+                                                    <?php } ?>
 
-                                                    if ($req->rowCount() > 0)
-                                                        ?> </ul> <?php ; 
+                                                    <?php if ($req->rowCount() > 0)
+                                                        ?> 
+                                                    </ul> <?php ; 
                                             ?>
                                         </li>
                                     </ul>                                   

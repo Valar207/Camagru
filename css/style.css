@@ -95,7 +95,16 @@ input[type="text"], input[type="password"],  input[type="email"]{
     padding: 5px 0 5px 0;
     background-color: #007bff;
 }
-
+.pop-notif{
+    position:absolute;
+    background-color: red;
+    width: 18px;
+    border-radius: 50px;
+    margin-left: 27px;
+    margin-top: 5px;
+    color: white;
+    font-size: 12px;
+}
 
 
 /*index*/
@@ -209,7 +218,7 @@ h6{
 }
 .item{
     margin: 0%;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
 }
 .item a{
@@ -295,11 +304,13 @@ video {
 }
 .imginmodal{
     margin: 0;
+    background-color: red;
 }
 .modalimg{
-    margin: 1%;
+    /* margin: 1%; */
     width: 100%;
     max-height: 100%;
+    
 }
 .modalimg:hover {
     opacity:0.4;
@@ -323,16 +334,15 @@ a:hover > .centered{
 .centeredd {
     position: absolute;
     display: none;
-    top: 40%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 a:hover > .centeredd{
     position: absolute;
     display: block;
-    top: 40%;
+    top: 42%;
     left: 50%;
-    /* transform: translate(-50%, -50%); */
     color: black;
 }
 
@@ -363,14 +373,22 @@ a:hover > .centeredd{
 .table td, .table th{
     vertical-align: middle;
 }
+.modalimg-profil{
+    width: 100%;
+    max-height: 100%;
+}
+.modalimg-profil:hover {
+    opacity:0.4;
+}
 
 
 /*photo*/
 .comments{
-    height: 18em;
-    /* border: solid black 1px; */
+    height: 340px;
+    border: solid black 1px;
     overflow: overlay;
     margin-top: 20px;
+    height: 3ew;
 }
 .comments::-webkit-scrollbar {
     display: none;
@@ -571,4 +589,9 @@ a:hover > .centeredd{
 }
 .stick{
     margin-top: 15px;
+}
+.modalimg-preview{
+    margin: 1%;
+    width: 100%;
+    max-height: 100%;
 }

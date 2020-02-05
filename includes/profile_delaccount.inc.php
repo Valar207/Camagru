@@ -25,11 +25,15 @@ else
         }
         else if ($pwdCheck == true)
         {
-            $req = $bdd->prepare("DELETE FROM pictures WHERE id_user= :id");
-            $req->execute(array('id' => $id));
             $req = $bdd->prepare("DELETE FROM likes WHERE id_user= :id");
             $req->execute(array('id' => $id));
             $req = $bdd->prepare("DELETE FROM comments WHERE id_user= :id");
+            $req->execute(array('id' => $id));
+            $req = $bdd->prepare("DELETE FROM comments USING comments LEFT JOIN pictures ON (comments.id_img = pictures.id_img) WHERE pictures.id_user= :id");
+            $req->execute(array('id' => $id));
+            $req = $bdd->prepare("DELETE FROM likes USING likes LEFT JOIN pictures ON (likes.id_img = pictures.id_img) WHERE pictures.id_user= :id");
+            $req->execute(array('id' => $id));
+            $req = $bdd->prepare("DELETE FROM pictures WHERE id_user= :id");
             $req->execute(array('id' => $id));
             $req = $bdd->prepare("DELETE FROM users WHERE idUsers= :id");
             $req->execute(array('id' => $id));

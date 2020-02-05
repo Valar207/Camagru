@@ -87,7 +87,7 @@ $comments = $req->rowCount();
             ?>
             <div class="col-4 text-center" style="padding: 0.5% 1% 0.5% 1%;">
 			<a href="photo.php?id_img=<?php echo $row['id_img'] ?>&page=<?php echo $pagecourante ?>&profil=yes">
-                            <img width=100% src='<?php echo $row['img'] ?>' class="modalimg">
+                            <img width=100% src='<?php echo $row['img'] ?>' class="modalimg-profil">
 							<h5 class="centeredd"><img src="icones/heart.svg" width=25> <?php echo $likes ?> <img src="icones/comment.svg" width=25> <?php echo $coms ?></h5>
             </a>
 

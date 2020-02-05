@@ -126,7 +126,7 @@ $page =$_GET['page'];
                     </div>
 
                     <hr>
-                    <form autocomplete="off" action="includes/add_comment.inc.php" method="post" class="col">
+                    <form autocomplete="off" action="includes/add_comment.inc.php" method="post" class="row justify-content-around">
                                 <input type="hidden" value="<?php echo $id_img ?>" name="id_img">
                                 <input type="hidden" value="<?php echo $page ?>" name="page">
                                 <input class="form-control form_com" name="com" required="required" pattern="{1,120}" placeholder="Ajouter un commentaire..." rows="3">
