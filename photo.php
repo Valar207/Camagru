@@ -159,7 +159,7 @@ if(!is_numeric($id_img) || !is_numeric($page)){
                                 }
                             ?>
                             <tr class="">
-                                <td><img src="<?php echo $img_user;?>" class="user_img"></td>
+                                <td><img src="<?php echo $img_user;?>" class="img-profil"></td>
                                 <td><h3 style="display:inline-block;"><?php echo $name_user;?></h3><td>
                             </tr>
                 <div class="comments">
