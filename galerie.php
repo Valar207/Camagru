@@ -2,8 +2,6 @@
 require "header.php";
 require "./config/database_connect.php";
 
-
-
 $imgParPage = 9;
 $req = $bdd->prepare("SELECT id_img FROM pictures");
 $req->execute();
@@ -21,8 +19,6 @@ else{
 	$pagecourante = 1;
 }
 $depart = ($pagecourante - 1) * $imgParPage;
-
-
 ?>
 
 <!-- display gallerie -->
@@ -31,7 +27,6 @@ $depart = ($pagecourante - 1) * $imgParPage;
 <h1 class="text-center galerietxt">Galerie</h1>
 <hr>
 <div class="row">
-
 
 <?php
 	$req = $bdd->prepare("SELECT * FROM pictures ORDER BY id_img DESC LIMIT ".$depart.",".$imgParPage);
@@ -50,8 +45,6 @@ $depart = ($pagecourante - 1) * $imgParPage;
 		<?php
 		}?>
 				</div>
-
-
 <!-- Pagination -->
 <nav aria-label="Page navigation" class="center">
   <ul class="pagination justify-content-center ">

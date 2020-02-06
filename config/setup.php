@@ -101,6 +101,10 @@ $sql = "INSERT INTO `stickers` (sticker)
         ('stickers/batman.png'),
         ('stickers/cat.png'),
         ('stickers/glasses.png'),
+        ('stickers/ps4.png'),
+        ('stickers/switch.png'),
+        ('stickers/eyes.png'),
+        ('stickers/barbe.png'),
         ('stickers/lego.png'),
         ('stickers/phone.png')";
 $req = $bdd->prepare($sql);

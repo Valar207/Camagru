@@ -5,9 +5,7 @@ if (!isset($_SESSION['bio']))
 {
     $_SESSION['bio'] = '';
 }
-
 ?>
-
 <div class="container edit_profil">
     <div class="row">
         <div class="col-md-4 nav-profil-left">
@@ -33,8 +31,6 @@ if (!isset($_SESSION['bio']))
                     </div> 
                 </div>
             <form action="./includes/edit_profile.inc.php" method="post" class="form-right">
-                
-
                 <?php
 
                 if (isset($_GET['success']))
@@ -79,9 +75,6 @@ if (!isset($_SESSION['bio']))
                         Veuillez sélectionner une image.
                         </div>';
                 }
-
-
-
             ?>
                 <div class="form-group row" style="margin-top:20px;">
                     <div class="col-sm-4 text-right">
@@ -114,9 +107,6 @@ if (!isset($_SESSION['bio']))
                     </div>
                 </div>
             </form>
-
-
-
         </div>
     </div>
 </div>

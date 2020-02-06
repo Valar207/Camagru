@@ -71,7 +71,6 @@
             Votre compte a bien été supprimé !
             </div>';
         }
-
     ?>
     <div class="form-group">
         <input style="margin-bottom:5px;" type="text" name="mail" placeholder="E-mail ou nom d'utilisateur" id="username" class="form-control">
